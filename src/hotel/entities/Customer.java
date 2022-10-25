@@ -1,24 +1,7 @@
 package hotel.entities;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
-public class Customer extends Application {
-    public static Stage rootStage;
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        rootStage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
-        primaryStage.setTitle("Multi Page");
-        primaryStage.setScene(new Scene(root, 600, 400));
-        primaryStage.show();
-    }
+public class Customer{
 
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }
