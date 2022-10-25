@@ -1,4 +1,4 @@
-package hotel.dao.intefaces;
+package hotel.dao.interfaces;
 
 import java.util.ArrayList;
 
