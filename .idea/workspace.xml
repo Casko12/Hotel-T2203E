@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b99b441-bb2a-4787-9b66-77b89acc5709" name="Changes" comment="Hotel">
-      <change afterPath="$PROJECT_DIR$/src/hotel/dao/intefaces/HotelRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="2b99b441-bb2a-4787-9b66-77b89acc5709" name="Changes" comment="Hotel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,7 +85,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666703335329</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Hotel">
+      <created>1666703882990</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666703882990</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Hotel">
+      <created>1666703909605</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666703909605</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
