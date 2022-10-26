@@ -8,5 +8,6 @@
    <children>
       <Button layoutX="68.0" layoutY="60.0" mnemonicParsing="false" onAction="#onToListRoom" prefHeight="119.0" prefWidth="220.0" text="Room List" />
       <Button layoutX="329.0" layoutY="60.0" mnemonicParsing="false" onAction="#onToListCustomer" prefHeight="119.0" prefWidth="235.0" text="Customer List" />
+      <Button layoutX="183.0" layoutY="232.0" mnemonicParsing="false" onAction="#onToRoomRent" prefHeight="119.0" prefWidth="235.0" text="RoomRent" />
    </children>
 </Pane>

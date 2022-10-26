@@ -39,7 +39,7 @@ public class RoomController implements Initializable {
 
     public void backToHome(ActionEvent actionEvent) throws Exception {
         Parent listRoom = FXMLLoader.load(getClass().getResource("../home.fxml"));
-        Main.rootStage.setTitle("Room");
+        Main.rootStage.setTitle("Home");
         Main.rootStage.setScene(new Scene(listRoom,800,600));
     }
 }

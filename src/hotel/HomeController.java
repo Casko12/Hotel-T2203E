@@ -15,8 +15,14 @@ public class HomeController {
     }
 
     public void onToListCustomer(ActionEvent actionEvent) throws Exception {
-        Parent listRoom = FXMLLoader.load(getClass().getResource("customer/customer.fxml"));
+        Parent customer = FXMLLoader.load(getClass().getResource("customer/customer.fxml"));
         Main.rootStage.setTitle("Customer");
-        Main.rootStage.setScene(new Scene(listRoom,800,600));
+        Main.rootStage.setScene(new Scene(customer,800,600));
+    }
+
+    public void onToRoomRent(ActionEvent actionEvent) throws Exception {
+        Parent roomrent = FXMLLoader.load(getClass().getResource("roomrent/roomrent.fxml"));
+        Main.rootStage.setTitle("Roomrent");
+        Main.rootStage.setScene(new Scene(roomrent,800,600));
     }
 }

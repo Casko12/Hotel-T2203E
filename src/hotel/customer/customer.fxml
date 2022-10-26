@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:controller="hotel.customer.CustomerController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.customer.CustomerController">
    <children>
       <TableView layoutX="11.0" layoutY="69.0" prefHeight="200.0" prefWidth="577.0">
         <columns>
@@ -14,6 +14,6 @@
             <TableColumn prefWidth="58.0" text="Edit" />
         </columns>
       </TableView>
-      <Button onAction="#backHome" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" text="&lt;&lt; Back Home" />
+      <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#backHome" text="&lt;&lt; Back Home" />
    </children>
 </Pane>

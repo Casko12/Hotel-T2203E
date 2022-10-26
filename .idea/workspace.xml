@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b99b441-bb2a-4787-9b66-77b89acc5709" name="Changes" comment="Hotel">
-      <change afterPath="$PROJECT_DIR$/src/hotel/customer/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hotel/dao/impls/RoomRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hotel/room/RoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hotel/roomrent/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hotel/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hotel/customer/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/customer/customer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/dao/interfaces/HotelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/dao/interfaces/HotelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/entities/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/entities/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/enums/RepositoryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/enums/RepoType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hotel/factory/RepositoryFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/factory/RepositoryFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hotel/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hotel/room/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/room/RoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hotel/roomrent/roomrent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/roomrent/roomrent.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,22 +41,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/bai tap aptech/T2203E JP2/Hotel/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/java2/Hotel-T2203E",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\bai tap aptech\T2203E JP2\Hotel\src" />
@@ -109,6 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666702353428</updated>
       <workItem from="1666702355100" duration="1209000" />
+      <workItem from="1666800553382" duration="1937000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel">
       <created>1666702462834</created>
@@ -145,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666703909605</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Hotel">
+      <created>1666717299915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666717299915</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
