@@ -1,4 +1,7 @@
 package hotel.dao.impls;
 
-public class RoomRentRepository {
+import hotel.dao.interfaces.HotelRepository;
+import hotel.entities.RoomRent;
+
+public class RoomRentRepository implements HotelRepository<RoomRent> {
 }

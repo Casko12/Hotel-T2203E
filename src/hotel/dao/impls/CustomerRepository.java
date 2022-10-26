@@ -1,4 +1,7 @@
 package hotel.dao.impls;
 
-public class CustomerRepository {
+import hotel.dao.interfaces.HotelRepository;
+import hotel.entities.Customer;
+
+public class CustomerRepository implements HotelRepository<Customer> {
 }
