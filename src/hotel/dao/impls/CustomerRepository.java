@@ -18,7 +18,7 @@ public class CustomerRepository implements HotelRepository<Customer> {
             while (rs.next()){
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                String cmt = rs.getInt("cmt");
+                String cmt = rs.getString("cmt");
 
                 Customer c = new Customer(id,name,cmt);
                 ls.add(c);
@@ -28,7 +28,7 @@ public class CustomerRepository implements HotelRepository<Customer> {
         }
         return ls;
     }
-    }
+
 
     @Override
     public boolean create(Customer customer) {
