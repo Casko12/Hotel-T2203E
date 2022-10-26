@@ -1,5 +1,5 @@
 package hotel.enums;
 
 public enum RepoType {
-    ROOM,
+    ROOM, CUSTOMER, ROOMRENT
 }
