@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class RoomRentRepository implements HotelRepository<RoomRent> {
     @Override
     public ArrayList<RoomRent> all() {
+
+
         return null;
     }
 
