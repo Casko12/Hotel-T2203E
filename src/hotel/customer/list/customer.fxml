@@ -15,5 +15,6 @@
         </columns>
       </TableView>
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#backHome" text="&lt;&lt; Back Home" />
+      <Button onAction="#onToAdd" layoutX="508.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Add" />
    </children>
 </Pane>
