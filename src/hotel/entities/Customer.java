@@ -12,10 +12,11 @@ public class Customer{
     public Customer() {
     }
 
-    public Customer(Integer id, String name, String cmt) {
+    public Customer(Integer id, String name, String cmt, Button edit) {
         this.id = id;
         this.name = name;
         this.cmt = cmt;
+        this.edit = edit;
     }
 
     public Integer getId() {
@@ -40,5 +41,13 @@ public class Customer{
 
     public void setCmt(String cmt) {
         this.cmt = cmt;
+    }
+
+    public Button getEdit() {
+        return edit;
+    }
+
+    public void setEdit(Button edit) {
+        this.edit = edit;
     }
 }
