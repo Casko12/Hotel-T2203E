@@ -8,8 +8,9 @@ import javafx.scene.Scene;
 
 public class Controller {
     public void onToBackHome(ActionEvent actionEvent) throws Exception{
-        Parent listRoom = FXMLLoader.load(getClass().getResource("../home.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/home.fxml"));
+        Scene listScene = new Scene(listPage, 800, 600);
         Main.rootStage.setTitle("Home");
-        Main.rootStage.setScene(new Scene(listRoom,800,600));
+        Main.rootStage.setScene(listScene);
     }
 }
