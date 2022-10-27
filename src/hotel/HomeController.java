@@ -4,25 +4,27 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class HomeController {
     public void onToListRoom(ActionEvent actionEvent) throws Exception {
-        Parent listRoom = FXMLLoader.load(getClass().getResource("room/room.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("room/room.fxml"));
+        Scene listScene = new Scene(listPage,800,600);
         Main.rootStage.setTitle("Room");
-        Main.rootStage.setScene(new Scene(listRoom,800,600));
+        Main.rootStage.setScene(listScene);
 
     }
 
     public void onToListCustomer(ActionEvent actionEvent) throws Exception {
-        Parent customer = FXMLLoader.load(getClass().getResource("customer/customer.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("customer/list/customer.fxml"));
+        Scene listScene = new Scene(listPage,800,600);
         Main.rootStage.setTitle("Customer");
-        Main.rootStage.setScene(new Scene(customer,800,600));
+        Main.rootStage.setScene(listScene);
     }
 
     public void onToRoomRent(ActionEvent actionEvent) throws Exception {
-        Parent roomrent = FXMLLoader.load(getClass().getResource("roomrent/roomrent.fxml"));
-        Main.rootStage.setTitle("Roomrent");
-        Main.rootStage.setScene(new Scene(roomrent,800,600));
+        Parent listPage = FXMLLoader.load(getClass().getResource("roomrent/roomrent.fxml"));
+        Scene listScene = new Scene(listPage,800,600);
+        Main.rootStage.setTitle("Room Rent");
+        Main.rootStage.setScene(listScene);
     }
 }

@@ -1,10 +1,13 @@
 package hotel.entities;
 
 
+import javafx.scene.control.Button;
+
 public class Customer{
     public Integer id;
     public String name;
     public String cmt;
+    public Button edit;
 
     public Customer() {
     }
