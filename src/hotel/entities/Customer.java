@@ -1,6 +1,7 @@
 package hotel.entities;
-
-
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 public class Customer{
@@ -12,12 +13,20 @@ public class Customer{
     public Customer() {
     }
 
-    public Customer(Integer id, String name, String cmt, Button edit) {
+    public Customer(int id, String name, String cmt) {
         this.id = id;
         this.name = name;
         this.cmt = cmt;
-        this.edit = edit;
+        this.edit = new Button("Edit");
+        this.edit.setOnAction((event) -> {
+            try{
+
+            }catch (Exception e){
+
+            }
+        });
     }
+
 
     public Integer getId() {
         return id;

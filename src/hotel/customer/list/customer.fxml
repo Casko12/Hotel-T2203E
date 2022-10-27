@@ -6,7 +6,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.customer.list.CustomerController">
    <children>
-      <TableView layoutX="11.0" layoutY="69.0" prefHeight="200.0" prefWidth="577.0">
+      <TableView fx:id="tbCustomers" layoutX="11.0" layoutY="69.0" prefHeight="200.0" prefWidth="577.0">
         <columns>
           <TableColumn fx:id="tdName" prefWidth="237.0" text="Name" />
           <TableColumn fx:id="tdCMT" prefWidth="208.0" text="CMT" />
