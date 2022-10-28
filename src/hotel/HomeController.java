@@ -15,7 +15,7 @@ public class HomeController {
     }
 
     public void onToListCustomer(ActionEvent actionEvent) throws Exception {
-        Parent listPage = FXMLLoader.load(getClass().getResource("customer/list/customer.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("customer/list/Customer.fxml"));
         Scene listScene = new Scene(listPage,800,600);
         Main.rootStage.setTitle("Customer");
         Main.rootStage.setScene(listScene);
