@@ -48,11 +48,35 @@ public class CustomerRepository implements HotelRepository<Customer> {
 
     @Override
     public boolean update(Customer customer) {
+        try{
+            String sql_txt = "update customer set name =?, cmt = ? where id = ?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(customer.getName());
+            arr.add(customer.getCmt());
+            arr.add(customer.getId());
+            if(conn.execute(sql_txt,arr)){
+                return true;
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         return false;
     }
 
     @Override
     public boolean delete(Customer customer) {
+        try{
+            String sql_txt = "delete from customer where id = ?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(customer.getId());
+            if(conn.execute(sql_txt,arr)){
+                return true;
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         return false;
     }
 
