@@ -27,11 +27,9 @@ public class Customer{
                 Main.rootStage.setScene( new Scene(edit,800,600));
                 Main.rootStage.setTitle("Edit Customer");
             }catch (Exception e){
-
             }
         });
     }
-
 
     public Integer getId() {
         return id;
