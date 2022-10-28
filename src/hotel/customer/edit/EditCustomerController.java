@@ -59,7 +59,7 @@ public class EditCustomerController implements Initializable {
         try{
             Alert alert= new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Delete Customer?");
-            alert.setHeaderText("Are you sure delete customer: "+editedCustomer.getName());
+            alert.setHeaderText("Confirm to delete customer: "+editedCustomer.getName()+"?");
             Optional<ButtonType> option = alert.showAndWait();
 
             if(option.get() == ButtonType.OK){
