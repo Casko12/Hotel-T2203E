@@ -4,16 +4,16 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:controller="hotel.roomrent.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="hotel.roomrent.RoomRentController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView layoutX="7.0" layoutY="72.0" prefHeight="200.0" prefWidth="589.0">
+      <TableView fx:id="tbRoomRent" layoutX="7.0" layoutY="72.0" prefHeight="200.0" prefWidth="589.0">
         <columns>
-          <TableColumn prefWidth="78.0" text="Room Name" />
-          <TableColumn prefWidth="149.0" text="Customer Name" />
-            <TableColumn prefWidth="106.0" text="Date In" />
-            <TableColumn prefWidth="116.0" text="Date Out" />
-            <TableColumn prefWidth="69.0" text="Status" />
-            <TableColumn text="Edit" />
+          <TableColumn fx:id="roomName" prefWidth="78.0" text="Room Name" />
+          <TableColumn fx:id="customerName" prefWidth="149.0" text="Customer Name" />
+            <TableColumn fx:id="dateIn" prefWidth="106.0" text="Date In" />
+            <TableColumn fx:id="dateOut" prefWidth="116.0" text="Date Out" />
+            <TableColumn fx:id="status" prefWidth="69.0" text="Status" />
+            <TableColumn fx:id="edit" text="Edit" />
         </columns>
       </TableView>
       <Button onAction="#onToBackHome" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" text="&lt;&lt; Back Home" />

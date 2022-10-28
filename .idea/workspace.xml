@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b99b441-bb2a-4787-9b66-77b89acc5709" name="Changes" comment="Hotel" />
+    <list default="true" id="2b99b441-bb2a-4787-9b66-77b89acc5709" name="Changes" comment="Hotel">
+      <change afterPath="$PROJECT_DIR$/src/hotel/customer/add/AddCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hotel/customer/list/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/customer/list/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hotel/customer/list/customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hotel/customer/list/customer.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,14 +146,7 @@
       <option name="project" value="LOCAL" />
       <updated>1666717299915</updated>
     </task>
-    <task id="LOCAL-00007" summary="Hotel">
-      <created>1666890309087</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1666890309087</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

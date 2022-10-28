@@ -1,20 +1,45 @@
 package hotel.entities;
 
+import hotel.Main;
+import hotel.roomrent.EditRoomRentController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+
 import java.util.Date;
 
 public class RoomRent {
-    public String roomnane;
-    public String customername;
-    public String status;
+    public Integer roomId;
+    public Integer customerId;
+    public Integer status;
     public Date datein;
     public Date dateout;
+    public Button edit;
 
-    public RoomRent(String roomnane, String customername, String status, Date datein, Date dateout) {
-        this.roomnane = roomnane;
-        this.customername = customername;
+    public RoomRent() {
+    }
+
+    public RoomRent(Integer roomId, Integer customerId, Integer status, Date datein, Date dateout) {
+        this.roomId = roomId;
+        this.customerId = customerId;
         this.status = status;
         this.datein = datein;
         this.dateout = dateout;
+        this.edit = new Button("Edit");
+        this.edit.setOnAction((event) ->{
+            try {
+                EditRoomRentController.editedRoomRent = this;
+                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/editroomrent.fxml"));
+                Main.rootStage.setTitle("EditRoomRent");
+                Main.rootStage.setScene(new Scene(edit,800,600));
+
+            }catch (Exception e){}
+        } );
+    }
+
+    public Button getEdit() {
+        return edit;
     }
 
     public Date getDatein() {
@@ -33,27 +58,27 @@ public class RoomRent {
         this.dateout = dateout;
     }
 
-    public String getRoomnane() {
-        return roomnane;
+    public Integer getRoomId() {
+        return roomId;
     }
 
-    public void setRoomnane(String roomnane) {
-        this.roomnane = roomnane;
+    public void setRoomId(Integer roomnane) {
+        this.roomId = roomId;
     }
 
-    public String getCustomername() {
-        return customername;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomername(String customername) {
-        this.customername = customername;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
