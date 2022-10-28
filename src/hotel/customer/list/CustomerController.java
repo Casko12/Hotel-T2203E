@@ -51,7 +51,7 @@ public class CustomerController implements Initializable {
 
     public void onToAdd(ActionEvent actionEvent) throws Exception {
 
-        Parent listPage = FXMLLoader.load(getClass().getResource("../add/addCustomer.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("../add/AddCustomer.fxml"));
         Scene listScene = new Scene(listPage, 800, 600);
         Main.rootStage.setTitle("Add Customer");
         Main.rootStage.setScene(listScene);

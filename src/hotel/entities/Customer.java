@@ -1,8 +1,10 @@
 package hotel.entities;
+import hotel.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import hotel.customer.edit.EditCustomerController;
 
 public class Customer{
     public Integer id;
@@ -20,7 +22,10 @@ public class Customer{
         this.edit = new Button("Edit");
         this.edit.setOnAction((event) -> {
             try{
-
+                EditCustomerController.editedCustomer = this;
+                Parent edit = FXMLLoader.load(getClass().getResource("../customer/edit/EditCustomer.fxml"));
+                Main.rootStage.setScene( new Scene(edit,800,600));
+                Main.rootStage.setTitle("Edit Customer");
             }catch (Exception e){
 
             }
