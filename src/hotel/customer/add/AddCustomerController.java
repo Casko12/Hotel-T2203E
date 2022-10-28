@@ -2,6 +2,8 @@ package hotel.customer.add;
 
 import hotel.Main;
 import hotel.dao.impls.CustomerRepository;
+import hotel.enums.RepoType;
+import hotel.factory.RepositoryFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,7 +27,7 @@ public class AddCustomerController {
             String name = txtCustomerName.getText();
             String cmt = txtCMT.getText();
             Customer customer = new Customer(null, name, cmt);
-            CustomerRepository rp = new CustomerRepository();
+            CustomerRepository rp = (CustomerRepository)RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
             if(rp.create(customer)){
                 backToList(null);
             } else {

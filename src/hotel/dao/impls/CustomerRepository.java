@@ -32,6 +32,17 @@ public class CustomerRepository implements HotelRepository<Customer> {
 
     @Override
     public boolean create(Customer customer) {
+        try{
+            String sql_txt ="insert into customer(name, cmt) values(?,?)";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(customer.getName());
+            arr.add(customer.getCmt());
+            if(conn.execute(sql_txt,arr)){
+                return true;
+            }
+        }catch (Exception e){
+        }
         return false;
     }
 
