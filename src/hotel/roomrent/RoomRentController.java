@@ -25,7 +25,7 @@ import java.util.*;
 public class RoomRentController implements Initializable {
 
     public TableView<RoomRent> tbRoomRent;
-    public TableColumn<RoomRent, Integer> roomName;
+    public TableColumn<RoomRent, String> roomName;
     public TableColumn<RoomRent, Integer> customerName;
     public TableColumn<RoomRent, Date> dateIn;
     public TableColumn<RoomRent, Date> dateOut;
@@ -34,7 +34,7 @@ public class RoomRentController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        roomName.setCellValueFactory(new PropertyValueFactory<RoomRent, Integer>("roomId"));
+        roomName.setCellValueFactory(new PropertyValueFactory<RoomRent, String>("roomName"));
         customerName.setCellValueFactory(new PropertyValueFactory<RoomRent, Integer>("customerId"));
         dateIn.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
         dateOut.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));

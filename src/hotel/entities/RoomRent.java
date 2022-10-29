@@ -1,6 +1,9 @@
 package hotel.entities;
 
 import hotel.Main;
+import hotel.dao.impls.RoomRepository;
+import hotel.enums.RepoType;
+import hotel.factory.RepositoryFactory;
 import hotel.roomrent.EditRoomRentController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +19,8 @@ public class RoomRent {
     public Date datein;
     public Date dateout;
     public Button edit;
+
+    private String roomName;
 
     public RoomRent() {
     }
@@ -82,5 +87,16 @@ public class RoomRent {
         this.status = status;
     }
 
+    public String getRoomName() {
+        System.out.println(this.room());
+        return this.room().getName();
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+    public Room room(){
+        return ((RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM)).findOne(this.getRoomId());
+    }
 }
 

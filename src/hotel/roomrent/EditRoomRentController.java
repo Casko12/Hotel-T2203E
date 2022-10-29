@@ -1,8 +1,12 @@
 package hotel.roomrent;
 
+import hotel.Main;
 import hotel.entities.RoomRent;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
@@ -33,6 +37,10 @@ public class EditRoomRentController implements Initializable {
     public void CheckOut(ActionEvent actionEvent) {
     }
 
-    public void Back(ActionEvent actionEvent) {
+    public void Back(ActionEvent actionEvent) throws Exception{
+        Parent listToRoomRent = FXMLLoader.load(getClass().getResource("./roomrent.fxml"));
+        Scene listScene = new Scene(listToRoomRent, 800, 600);
+        Main.rootStage.setTitle("RoomRent List");
+        Main.rootStage.setScene(listScene);
     }
 }
