@@ -3,12 +3,12 @@ package hotel.entities;
 public class Room {
     public Integer id;
     public String name;
-    public Integer type;
+    public String type;
 
     public Room() {
     }
 
-    public Room(Integer id, String name, Integer type) {
+    public Room(Integer id, String name, String type) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -30,11 +30,15 @@ public class Room {
         this.name = name;
     }
 
-    public Integer getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(String type) {
         this.type = type;
+    }
+    @Override
+    public String toString() {
+        return getName();
     }
 }

@@ -18,7 +18,7 @@ public class RoomRepository implements HotelRepository<Room> {
             while (rs.next()){
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                int type = rs.getInt("type");
+                String type = rs.getString("type");
 
                 Room r = new Room(id,name,type);
                 ls.add(r);
@@ -46,6 +46,22 @@ public class RoomRepository implements HotelRepository<Room> {
 
     @Override
     public Room findOne(Integer id) {
+        try {
+            String sql_txt = "select * from room where id=?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList<>();
+            arr.add(id);
+            ResultSet rs = conn.executeQuery(sql_txt,arr);
+            while (rs.next()){
+                int Id = rs.getInt("id");
+                String name = rs.getString("name");
+                String type = rs.getString("type");
+
+                return new Room(id,name,type);
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         return null;
     }
 
