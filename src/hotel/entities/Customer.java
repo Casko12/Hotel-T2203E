@@ -62,4 +62,9 @@ public class Customer{
     public void setEdit(Button edit) {
         this.edit = edit;
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

@@ -1,6 +1,7 @@
 package hotel.entities;
 
 import hotel.Main;
+import hotel.dao.impls.CustomerRepository;
 import hotel.dao.impls.RoomRepository;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
@@ -21,6 +22,7 @@ public class RoomRent {
     public Button edit;
 
     private String roomName;
+    private String customerName;
 
     public RoomRent() {
     }
@@ -97,6 +99,18 @@ public class RoomRent {
     }
     public Room room(){
         return ((RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM)).findOne(this.getRoomId());
+    }
+
+    public String getCustomerName() {
+        System.out.println(this.customer());
+        return this.customer().getName();
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+    public Customer customer(){
+        return ((CustomerRepository)RepositoryFactory.creHotelRepository(RepoType.CUSTOMER)).findOne(this.getCustomerId());
     }
 }
 
