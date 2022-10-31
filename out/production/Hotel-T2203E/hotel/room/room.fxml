@@ -4,17 +4,18 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane fx:controller="hotel.room.RoomController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.room.RoomController">
    <children>
-      <TableView fx:id="tbRoom" layoutX="62.0" layoutY="82.0" prefHeight="200.0" prefWidth="479.0">
+      <TableView fx:id="tbRoom" layoutX="5.0" layoutY="74.0" prefHeight="205.0" prefWidth="606.0">
         <columns>
-          <TableColumn fx:id="tId" prefWidth="103.0" text="ID" />
-          <TableColumn fx:id="tNameRoom" minWidth="9.0" prefWidth="248.0" text="Name_Room" />
-            <TableColumn fx:id="tTypeRoom" minWidth="3.0" prefWidth="127.0" text="Type_Room" />
+          <TableColumn fx:id="tId" prefWidth="93.0" text="ID" />
+          <TableColumn fx:id="tNameRoom" minWidth="9.0" prefWidth="188.0" text="Name_Room" />
+            <TableColumn fx:id="tTypeRoom" minWidth="3.0" prefWidth="120.0" text="Type_Room" />
+            <TableColumn fx:id="tStatus" minWidth="0.0" prefWidth="81.0" text="Status" />
+            <TableColumn fx:id="tEdit" minWidth="0.0" prefWidth="123.0" text="Edit" />
         </columns>
       </TableView>
-      <Button onAction="#backToHome" layoutX="62.0" layoutY="27.0" mnemonicParsing="false" text="&lt;&lt;Back Home" />
+      <Button layoutX="62.0" layoutY="27.0" mnemonicParsing="false" onAction="#backToHome" text="&lt;&lt;Back Home" />
       <Button layoutX="464.0" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="ADD" />
    </children>
 </Pane>
