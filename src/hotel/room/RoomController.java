@@ -25,8 +25,9 @@ public class RoomController implements Initializable {
     public TableColumn<Room,Integer> tId;
     public TableColumn<Room,String> tNameRoom;
     public TableColumn<Room,Integer> tTypeRoom;
-    public TableColumn<Room,String> tStatus;
-    public TableColumn<Room, Button> tEdit;
+    public TableColumn<Room,Integer> tStatus;
+    public TableColumn<Room, Button> tDatPhong;
+    public TableColumn<Room,Button> tChinhSua;
 
 
     @Override
@@ -34,8 +35,9 @@ public class RoomController implements Initializable {
         tId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tNameRoom.setCellValueFactory(new PropertyValueFactory<>("name"));
         tTypeRoom.setCellValueFactory(new PropertyValueFactory<>("type"));
-        tStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-        tEdit.setCellValueFactory(new PropertyValueFactory<>("edit"));
+        tStatus.setCellValueFactory(new PropertyValueFactory<>("statusLable"));
+        tDatPhong.setCellValueFactory(new PropertyValueFactory<>("datphong"));
+        tChinhSua.setCellValueFactory(new PropertyValueFactory<>("chinhsua"));
         ObservableList<Room> ls = FXCollections.observableArrayList();
         RoomRepository r = (RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM);
         ls.addAll(r.all());

@@ -6,20 +6,29 @@ public class Room {
     public Integer id;
     public String name;
     public String type;
-    public String status;
+    public Integer status;
 
-    public Button edit;
+    public Button datphong;
+    public Button chinhsua;
+
+    public String statusLable;
 
     public Room() {
     }
 
-    public Room(Integer id, String name, String type,String status) {
+    public Room(Integer id, String name, String type,Integer status) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.status = status;
-        this.edit = new Button("Đặt Phòng");
-        this.edit.setOnAction(event -> {
+        this.datphong = new Button("Đặt Phòng");
+        this.datphong.setOnAction(event -> {
+            try {
+
+            }catch (Exception e){}
+        });
+        this.chinhsua = new Button("Chỉnh sửa");
+        this.chinhsua.setOnAction(event -> {
             try {
 
             }catch (Exception e){}
@@ -54,19 +63,36 @@ public class Room {
         return getName();
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public Button getEdit() {
-        return edit;
+    public Button getDatphong() {
+        return datphong;
     }
 
-    public void setEdit(Button edit) {
-        this.edit = edit;
+    public void setDatphong(Button datphong) {
+        this.datphong = datphong;
     }
+
+    public Button getChinhsua() {
+        return chinhsua;
+    }
+
+    public void setChinhsua(Button chinhsua) {
+        this.chinhsua = chinhsua;
+    }
+
+    public String getStatusLable() {
+        return status==0?"Phòng Trống":"Đang Thuê";
+    }
+
+    public void setStatusLable(String statusLable) {
+        this.statusLable = statusLable;
+    }
+
 }

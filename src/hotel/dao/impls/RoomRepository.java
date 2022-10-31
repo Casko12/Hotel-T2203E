@@ -19,7 +19,7 @@ public class RoomRepository implements HotelRepository<Room> {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String type = rs.getString("type");
-                String status = rs.getString("status");
+                int status = rs.getInt("status");
 
                 Room r = new Room(id,name,type,status);
                 ls.add(r);
@@ -57,7 +57,7 @@ public class RoomRepository implements HotelRepository<Room> {
                 int Id = rs.getInt("id");
                 String name = rs.getString("name");
                 String type = rs.getString("type");
-                String status = rs.getString("status");
+                int status = rs.getInt("status");
 
                 return new Room(id,name,type,status);
             }
