@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -24,6 +25,8 @@ public class RoomController implements Initializable {
     public TableColumn<Room,Integer> tId;
     public TableColumn<Room,String> tNameRoom;
     public TableColumn<Room,Integer> tTypeRoom;
+    public TableColumn<Room,String> tStatus;
+    public TableColumn<Room, Button> tEdit;
 
 
     @Override
@@ -31,6 +34,8 @@ public class RoomController implements Initializable {
         tId.setCellValueFactory(new PropertyValueFactory<>("id"));
         tNameRoom.setCellValueFactory(new PropertyValueFactory<>("name"));
         tTypeRoom.setCellValueFactory(new PropertyValueFactory<>("type"));
+        tStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        tEdit.setCellValueFactory(new PropertyValueFactory<>("edit"));
         ObservableList<Room> ls = FXCollections.observableArrayList();
         RoomRepository r = (RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM);
         ls.addAll(r.all());
