@@ -1,5 +1,10 @@
 package hotel.entities;
 
+import hotel.Main;
+import hotel.room.datphong.CheckInController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 public class Room {
@@ -22,10 +27,16 @@ public class Room {
         this.type = type;
         this.status = status;
         this.datphong = new Button("Đặt Phòng");
-        this.datphong.setOnAction(event -> {
+        this.datphong.setOnAction((event) -> {
             try {
 
-            }catch (Exception e){}
+                CheckInController.checkIn = this;
+                Parent datphong = FXMLLoader.load(getClass().getResource("/datphong/datphong.fxml"));
+                Main.rootStage.setScene(new Scene(datphong,800,600));
+
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
         });
         this.chinhsua = new Button("Chỉnh sửa");
         this.chinhsua.setOnAction(event -> {
@@ -34,6 +45,8 @@ public class Room {
             }catch (Exception e){}
         });
     }
+
+
 
     public Integer getId() {
         return id;

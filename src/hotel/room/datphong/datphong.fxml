@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="hotel.room.datphong.CheckInController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="60.0" layoutY="86.0" promptText="Room" />
+      <ComboBox layoutX="59.0" layoutY="161.0" prefWidth="150.0" promptText="CMT" />
+      <DatePicker layoutX="59.0" layoutY="230.0" promptText="Date" />
+      <TextField layoutX="60.0" layoutY="304.0" promptText="Status" />
+      <Button onAction="#OnToBackRoom" layoutX="60.0" layoutY="24.0" mnemonicParsing="false" text="&lt;&lt; Back" />
+   </children>
+</Pane>
