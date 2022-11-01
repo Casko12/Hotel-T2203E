@@ -19,8 +19,7 @@ public class RoomRentRepository implements HotelRepository<RoomRent> {
             while (rs.next()){
                 int roomId =rs.getInt("roomId");
                 int customerId = rs.getInt("customerId");
-                int status = rs.getInt("status");
-                RoomRent r = new RoomRent(roomId,customerId,status,null,null);
+                RoomRent r = new RoomRent(roomId,customerId,null,null);
                 RR.add(r);
 
             }

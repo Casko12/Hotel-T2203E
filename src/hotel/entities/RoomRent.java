@@ -16,7 +16,6 @@ import java.util.Date;
 public class RoomRent {
     public Integer roomId;
     public Integer customerId;
-    public Integer status;
     public Date datein;
     public Date dateout;
     public Button edit;
@@ -27,10 +26,9 @@ public class RoomRent {
     public RoomRent() {
     }
 
-    public RoomRent(Integer roomId, Integer customerId, Integer status, Date datein, Date dateout) {
+    public RoomRent(Integer roomId, Integer customerId, Date datein, Date dateout) {
         this.roomId = roomId;
         this.customerId = customerId;
-        this.status = status;
         this.datein = datein;
         this.dateout = dateout;
         this.edit = new Button("Edit");
@@ -81,13 +79,6 @@ public class RoomRent {
         this.customerId = customerId;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
 
     public String getRoomName() {
         System.out.println(this.room());

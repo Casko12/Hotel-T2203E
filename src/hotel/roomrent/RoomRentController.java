@@ -29,7 +29,6 @@ public class RoomRentController implements Initializable {
     public TableColumn<RoomRent, String> customerName;
     public TableColumn<RoomRent, Date> dateIn;
     public TableColumn<RoomRent, Date> dateOut;
-    public TableColumn<RoomRent, Integer> status;
     public TableColumn<RoomRent, Button> edit;
 
     @Override
@@ -38,7 +37,6 @@ public class RoomRentController implements Initializable {
         customerName.setCellValueFactory(new PropertyValueFactory<RoomRent, String>("customerName"));
         dateIn.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
         dateOut.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
-        status.setCellValueFactory(new PropertyValueFactory<RoomRent, Integer>("status"));
         edit.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("edit"));
 
         ObservableList<RoomRent> rr = FXCollections.observableArrayList();
