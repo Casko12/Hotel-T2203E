@@ -12,7 +12,6 @@
           <TableColumn fx:id="customerName" prefWidth="149.0" text="Customer Name" />
             <TableColumn fx:id="dateIn" prefWidth="106.0" text="Date In" />
             <TableColumn fx:id="dateOut" prefWidth="116.0" text="Date Out" />
-            <TableColumn fx:id="status" prefWidth="69.0" text="Status" />
             <TableColumn fx:id="edit" text="Edit" />
         </columns>
       </TableView>
