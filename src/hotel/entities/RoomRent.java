@@ -81,7 +81,6 @@ public class RoomRent {
 
 
     public String getRoomName() {
-        System.out.println(this.room());
         return this.room().getName();
     }
 
@@ -93,7 +92,6 @@ public class RoomRent {
     }
 
     public String getCustomerName() {
-        System.out.println(this.customer());
         return this.customer().getName();
     }
 

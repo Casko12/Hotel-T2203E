@@ -34,12 +34,12 @@ public class RoomController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        tNameRoom.setCellValueFactory(new PropertyValueFactory<>("name"));
-        tTypeRoom.setCellValueFactory(new PropertyValueFactory<>("type"));
-        tStatus.setCellValueFactory(new PropertyValueFactory<>("statusLable"));
-        tDatPhong.setCellValueFactory(new PropertyValueFactory<>("datphong"));
-        tChinhSua.setCellValueFactory(new PropertyValueFactory<>("chinhsua"));
+        tId.setCellValueFactory(new PropertyValueFactory<Room,Integer>("id"));
+        tNameRoom.setCellValueFactory(new PropertyValueFactory<Room,String>("name"));
+        tTypeRoom.setCellValueFactory(new PropertyValueFactory<Room,Integer>("type"));
+        tStatus.setCellValueFactory(new PropertyValueFactory<Room,Integer>("statusLable"));
+        tDatPhong.setCellValueFactory(new PropertyValueFactory<Room,Button>("datphong"));
+        tChinhSua.setCellValueFactory(new PropertyValueFactory<Room,Button>("chinhsua"));
         ObservableList<Room> ls = FXCollections.observableArrayList();
         RoomRepository r = (RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM);
         ls.addAll(r.all());
