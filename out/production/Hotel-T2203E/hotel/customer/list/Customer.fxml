@@ -9,7 +9,7 @@
       <TableView fx:id="tbCustomers" layoutX="11.0" layoutY="69.0" prefHeight="200.0" prefWidth="577.0">
         <columns>
           <TableColumn fx:id="tdName" prefWidth="204.0" text="Name" />
-          <TableColumn fx:id="tdCMT" prefWidth="127.0" text="CMT" />
+          <TableColumn fx:id="tdCMT" prefWidth="127.0" text="National ID/ Passport" />
             <TableColumn fx:id="tdEdit1" prefWidth="94.0" text="Date In" />
             <TableColumn fx:id="tdEdit11" prefWidth="79.0" text="Date Out" />
             <TableColumn fx:id="tdEdit" prefWidth="73.0" text="Edit" />
