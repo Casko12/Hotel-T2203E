@@ -31,7 +31,7 @@ public class Room {
         this.datphong = new Button("Đặt Phòng");
         this.datphong.setOnAction((event) -> {
             try {
-//                CheckInController.checkInRoom = this;
+                CheckInController.checkInRoom = this;
                 Parent checkin = FXMLLoader.load(getClass().getResource("../room/checkin.fxml"));
                 Main.rootStage.setTitle("CheckIn");
                 Main.rootStage.setScene(new Scene(checkin,800,600));

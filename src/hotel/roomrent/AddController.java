@@ -17,23 +17,29 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EditRoomRentController implements Initializable {
+public class AddController implements Initializable {
     public ComboBox<Room> room;
     public ComboBox<Customer> customer;
     public ComboBox<Customer> id;
     public DatePicker txtDate;
 
-    public static RoomRent editedRoomRent;
+
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        ObservableList<Room> rooms = FXCollections.observableArrayList();
+        RoomRepository rr = (RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM);
+        rooms.addAll(rr.all());
+        room.setItems(rooms);
+        ObservableList<Customer> cname = FXCollections.observableArrayList();
+        CustomerRepository ccrname = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
+        cname.addAll(ccrname.all());
+        customer.setItems(cname);
     }
 
     public void Add(ActionEvent actionEvent) {
