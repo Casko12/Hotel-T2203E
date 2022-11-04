@@ -33,7 +33,6 @@ public class AddAfterCheckin {
             String cmtText = cmt.getText();
             AddAfterCheckin afc = new AddAfterCheckin( fullname, cmtText);
             RoomRentRepository rp = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
-
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
