@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:controller="hotel.roomrent.AddAfterCheckin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="441.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add More Person" />
+      <TextField fx:id="fullname" layoutX="162.0" layoutY="185.0" />
+      <TextField fx:id="cmt" layoutX="162.0" layoutY="330.0" />
+      <Text layoutX="162.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name" />
+      <Text layoutX="162.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID " />
+      <Button onAction="#add" layoutX="162.0" layoutY="447.0" mnemonicParsing="false" text="Add" />
+      <Button onAction="#back" layoutX="60.0" layoutY="35.0" mnemonicParsing="false" text="Back To Home" />
+   </children>
+</Pane>
