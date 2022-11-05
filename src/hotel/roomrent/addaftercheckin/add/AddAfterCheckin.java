@@ -1,8 +1,7 @@
-package hotel.roomrent;
+package hotel.roomrent.addaftercheckin.add;
 
 import hotel.Main;
 import hotel.dao.impls.RoomRentRepository;
-import hotel.entities.RoomRent;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
 import javafx.event.ActionEvent;
@@ -21,7 +20,7 @@ public class AddAfterCheckin {
 
 
     public void back(ActionEvent actionEvent) throws Exception {
-        Parent listToRoomRent = FXMLLoader.load(getClass().getResource("./addaftercheckin.fxml"));
+        Parent listToRoomRent = FXMLLoader.load(getClass().getResource("addaftercheckin.fxml"));
         Scene listScene = new Scene(listToRoomRent, 800, 600);
         Main.rootStage.setTitle("Add After Checkin");
         Main.rootStage.setScene(listScene);
@@ -31,7 +30,7 @@ public class AddAfterCheckin {
         try{
             String fullnameText = fullname.getText();
             String cmtText = cmt.getText();
-            AddAfterCheckin afc = new AddAfterCheckin( fullname, cmtText);
+            AddAfterCheckin afc = new AddAfterCheckin( fullname , cmtText);
             RoomRentRepository rp = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
         }catch (Exception e){
             System.out.println(e.getMessage());
