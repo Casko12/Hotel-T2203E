@@ -28,6 +28,45 @@ public class CustomerRepository implements HotelRepository<Customer> {
         }
         return ls;
     }
+    public ArrayList<Customer> name() {
+        ArrayList<Customer> lsname = new ArrayList<>();
+        try {
+            String sql_txt = "select name from customer";
+            Connector conn = Connector.getInstance();
+            ResultSet rs = conn.query(sql_txt);
+            while (rs.next()){
+
+                String name = rs.getString("name");
+
+
+                Customer c = new Customer(name);
+                lsname.add(c);
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return lsname;
+    }
+    public ArrayList<Customer> cmt() {
+        ArrayList<Customer> lscmt = new ArrayList<>();
+        try {
+            String sql_txt = "select cmt from customer";
+            Connector conn = Connector.getInstance();
+
+            ResultSet rs = conn.query(sql_txt);
+            while (rs.next()){
+
+                String cmt = rs.getString("cmt");
+
+
+                Customer c = new Customer(cmt);
+                lscmt.add(c);
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return lscmt;
+    }
 
 
     @Override

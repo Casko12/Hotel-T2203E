@@ -30,7 +30,7 @@ public class RoomRentController implements Initializable {
     public TableColumn<RoomRent, Date> dateIn;
     public TableColumn<RoomRent, Date> dateOut;
     public TableColumn<RoomRent, Button> edit;
-
+    public static RoomRent roomRent;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         roomName.setCellValueFactory(new PropertyValueFactory<RoomRent, String>("roomName"));
@@ -54,4 +54,10 @@ public class RoomRentController implements Initializable {
         Main.rootStage.setScene(listScene);
     }
 
+    public void add(ActionEvent actionEvent) throws Exception{
+        Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/roomrent/add.fxml"));
+        Scene listScene = new Scene(listPage, 800, 600);
+        Main.rootStage.setTitle("Home");
+        Main.rootStage.setScene(listScene);
+    }
 }

@@ -2,6 +2,7 @@ package hotel.roomrent;
 
 import hotel.Main;
 import hotel.dao.impls.CustomerRepository;
+import hotel.dao.impls.RoomRentRepository;
 import hotel.dao.impls.RoomRepository;
 import hotel.entities.Customer;
 import hotel.entities.Room;
@@ -28,7 +29,7 @@ public class AddController implements Initializable {
     public DatePicker txtDate;
 
 
-
+    public static RoomRent addRoomRent;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -38,14 +39,20 @@ public class AddController implements Initializable {
         room.setItems(rooms);
         ObservableList<Customer> cname = FXCollections.observableArrayList();
         CustomerRepository ccrname = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
-        cname.addAll(ccrname.all());
+        cname.addAll(ccrname.name());
         customer.setItems(cname);
+        ObservableList<Customer> ccmt = FXCollections.observableArrayList();
+        CustomerRepository ccrcmt = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
+        ccmt.addAll(ccrcmt.cmt());
+        id.setItems(ccmt);
     }
 
     public void Add(ActionEvent actionEvent) {
     }
 
     public void CheckIn(ActionEvent actionEvent) {
+
+
     }
 
     public void CheckOut(ActionEvent actionEvent) {

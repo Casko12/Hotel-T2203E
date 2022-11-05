@@ -16,6 +16,12 @@ public class Customer{
     public Customer() {
     }
 
+    public Customer(String name) {
+        this.name = name;
+
+    }
+
+
     public Customer(Integer id, String name, String cmt) {
         this.id = id;
         this.name = name;
