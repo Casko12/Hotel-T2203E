@@ -37,5 +37,5 @@ public class AddAfterCheckin {
             System.out.println(e.getMessage());
         }
     }
-    }
+}
 
