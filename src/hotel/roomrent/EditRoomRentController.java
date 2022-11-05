@@ -35,6 +35,7 @@ public class EditRoomRentController implements Initializable {
     }
 
     public void CheckOut(ActionEvent actionEvent) {
+
     }
 
     public void Back(ActionEvent actionEvent) throws Exception{

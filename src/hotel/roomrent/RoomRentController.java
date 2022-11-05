@@ -39,10 +39,8 @@ public class RoomRentController implements Initializable {
         dateOut.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
         edit.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("edit"));
 
-        ObservableList<RoomRent> rr = FXCollections.observableArrayList();
-        RoomRentRepository rrr = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
-        rr.addAll(rrr.all());
-        tbRoomRent.setItems(rr);
+        RoomRentRepository rr = (RoomRentRepository)RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
+        tbRoomRent.getItems().addAll(rr.all());
 
 
     }

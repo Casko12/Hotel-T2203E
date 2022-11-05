@@ -20,6 +20,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class  AddController implements Initializable {
@@ -35,11 +37,11 @@ public class  AddController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<Room> rooms = FXCollections.observableArrayList();
         RoomRepository rr = (RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM);
-        rooms.addAll(rr.all());
+        rooms.addAll(rr.emptyRoom());
         room.setItems(rooms);
         ObservableList<Customer> cname = FXCollections.observableArrayList();
         CustomerRepository ccrname = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
-        cname.addAll(ccrname.name());
+        cname.addAll(ccrname.all());
         customer.setItems(cname);
         ObservableList<Customer> ccmt = FXCollections.observableArrayList();
         CustomerRepository ccrcmt = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
@@ -47,18 +49,33 @@ public class  AddController implements Initializable {
         id.setItems(ccmt);
     }
 
-    public void Add(ActionEvent actionEvent) {
-    }
+
 
     public void CheckIn(ActionEvent actionEvent) {
+        try {
+            Room selectedRoom = room.getSelectionModel().getSelectedItem();
+            Customer selectCName = customer.getSelectionModel().getSelectedItem();
+            Customer selectCCmt = id.getSelectionModel().getSelectedItem();
+            LocalDate dp = txtDate.getValue();
+            RoomRentRepository rr =new RoomRentRepository();
+            ArrayList<RoomRent> ls = new ArrayList<>();
+            ls.addAll(rr.all());
+            RoomRent r = new RoomRent(selectedRoom.getId(),selectCName.getId());
+            if(rr.create(r)){
+                rr.update(r);
+                Back();
+            }else {
+                System.out.println("Error");
+            }
+        }catch (Exception e){}
+
 
 
     }
 
-    public void CheckOut(ActionEvent actionEvent) {
-    }
 
-    public void Back(ActionEvent actionEvent) throws Exception{
+
+    public void Back() throws Exception{
         Parent listToRoomRent = FXMLLoader.load(getClass().getResource("./roomrent.fxml"));
         Scene listScene = new Scene(listToRoomRent, 800, 600);
         Main.rootStage.setTitle("RoomRent List");

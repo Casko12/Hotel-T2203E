@@ -12,20 +12,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class RoomRent {
     public Integer roomId;
     public Integer customerId;
-    public Date datein;
-    public Date dateout;
+    public LocalDate datein;
+    public LocalDate dateout;
     public Button edit;
     public Button addat;
 
     private String roomName;
     private String customerName;
-
-    public RoomRent(Integer roomId, Integer customerId, Date datein, Date dateout) {
+    public static ArrayList<RoomRent> roomRents;
+    public RoomRent(Integer roomId, Integer customerId, LocalDate datein, LocalDate dateout) {
         this.roomId = roomId;
         this.customerId = customerId;
         this.datein = datein;
@@ -56,25 +58,31 @@ public class RoomRent {
     public RoomRent() {
     }
 
+    public RoomRent(Integer roomId, Integer customerId ) {
+        this.roomId = roomId;
+        this.customerId = customerId;
+
+    }
+
     public Button getAddat() {return addat;}
 
     public Button getEdit() {
         return edit;
     }
 
-    public Date getDatein() {
+    public LocalDate getDatein() {
         return datein;
     }
 
-    public void setDatein(Date datein) {
+    public void setDatein(LocalDate datein) {
         this.datein = datein;
     }
 
-    public Date getDateout() {
+    public LocalDate getDateout() {
         return dateout;
     }
 
-    public void setDateout(Date dateout) {
+    public void setDateout(LocalDate dateout) {
         this.dateout = dateout;
     }
 
@@ -116,5 +124,6 @@ public class RoomRent {
     public Customer customer(){
         return ((CustomerRepository)RepositoryFactory.creHotelRepository(RepoType.CUSTOMER)).findOne(this.getCustomerId());
     }
+
 }
 

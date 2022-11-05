@@ -31,11 +31,37 @@ public class RoomRentRepository implements HotelRepository<RoomRent> {
 
     @Override
     public boolean create(RoomRent roomRent) {
+        try {
+            String sql_txt = "insert into roomrent(roomId,customerId) values(?,?)";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(roomRent.getRoomId());
+            arr.add(roomRent.getCustomerId());
+
+            if (conn.execute(sql_txt, arr)) {
+                return true;
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+
+        }
+
         return false;
     }
 
+
     @Override
     public boolean update(RoomRent roomRent) {
+        try {
+            String sql_txt = "update room set Status=1 where id =?";
+            Connector conn = Connector.getInstance();
+            ArrayList ls = new ArrayList<>();
+            ls.add(roomRent.getRoomId());
+            if(conn.execute(sql_txt,ls)){
+                return true;
+            }
+
+        }catch (Exception e){}
         return false;
     }
 

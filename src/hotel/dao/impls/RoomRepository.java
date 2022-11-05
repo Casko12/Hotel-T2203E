@@ -29,6 +29,27 @@ public class RoomRepository implements HotelRepository<Room> {
         }
         return ls;
     }
+    public ArrayList emptyRoom() {
+        ArrayList<Room> ls = new ArrayList<>();
+        try {
+            String sql_txt = "select * from room where Status = 0";
+            Connector conn = Connector.getInstance();
+            ResultSet rs = conn.query(sql_txt);
+
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String type = rs.getString("type");
+                int status = rs.getInt("Status");
+
+                Room r = new Room(id,name,type,status);
+                ls.add(r);
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return ls;
+    }
 
     @Override
     public boolean create(Room room) {
@@ -37,7 +58,7 @@ public class RoomRepository implements HotelRepository<Room> {
 
     @Override
     public boolean update(Room room) {
-        return false;
+return false;
     }
 
     @Override
