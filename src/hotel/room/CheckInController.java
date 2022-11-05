@@ -1,9 +1,7 @@
 package hotel.room;
 
 import hotel.Main;
-import hotel.customer.edit.EditCustomerController;
 import hotel.entities.CheckIn;
-import hotel.entities.Customer;
 import hotel.entities.Room;
 import hotel.entities.RoomRent;
 import javafx.event.ActionEvent;
@@ -24,15 +22,13 @@ public class CheckInController implements Initializable {
     public TextField name;
     public TextField cmt;
 
-    public static Room checkInRoom;
+    public static RoomRent checkInRoom;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if(checkInRoom !=null){
-            room.setText(checkInRoom.getName());
-            room.setEditable(false);
-        }
-
+//        if(checkInRoom !=null){
+//            room.setText(checkInRoom.getRoom());
+//        }
 
     }
 
@@ -44,6 +40,5 @@ public class CheckInController implements Initializable {
     }
 
     public void checkin(ActionEvent actionEvent) {
-
     }
 }
