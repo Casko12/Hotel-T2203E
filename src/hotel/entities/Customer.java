@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import hotel.customer.edit.EditCustomerController;
 
+
 public class Customer{
     public Integer id;
     public String name;
