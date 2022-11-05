@@ -13,6 +13,7 @@
             <TableColumn fx:id="dateIn" prefWidth="106.0" text="Date In" />
             <TableColumn fx:id="dateOut" prefWidth="116.0" text="Date Out" />
             <TableColumn fx:id="edit" text="Edit" />
+            <TableColumn fx:id="addat" text="AddAfter" />
         </columns>
       </TableView>
       <Button onAction="#onToBackHome" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" text="&lt;&lt; Back Home" />

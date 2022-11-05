@@ -21,7 +21,7 @@ import javafx.scene.control.DatePicker;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AddController implements Initializable {
+public class  AddController implements Initializable {
     public ComboBox<Room> room;
     public ComboBox<Customer> customer;
     public ComboBox<Customer> id;

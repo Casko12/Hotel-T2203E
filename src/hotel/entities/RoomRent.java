@@ -5,6 +5,7 @@ import hotel.dao.impls.CustomerRepository;
 import hotel.dao.impls.RoomRepository;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
+import hotel.roomrent.AddAfterCheckin;
 import hotel.roomrent.EditRoomRentController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,12 +20,10 @@ public class RoomRent {
     public Date datein;
     public Date dateout;
     public Button edit;
+    public Button addat;
 
     private String roomName;
     private String customerName;
-
-    public RoomRent() {
-    }
 
     public RoomRent(Integer roomId, Integer customerId, Date datein, Date dateout) {
         this.roomId = roomId;
@@ -32,6 +31,8 @@ public class RoomRent {
         this.datein = datein;
         this.dateout = dateout;
         this.edit = new Button("Edit");
+        this.addat = new Button("Addafter");
+
         this.edit.setOnAction((event) ->{
             try {
                 EditRoomRentController.editedRoomRent = this;
@@ -41,7 +42,21 @@ public class RoomRent {
 
             }catch (Exception e){}
         } );
+
+        this.addat.setOnAction((event) ->{
+            try {
+                AddAfterCheckin.addafter = this;
+                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/addaftercheckin.fxml"));
+                Main.rootStage.setTitle("AddAfterChekin");
+                Main.rootStage.setScene(new Scene(edit,800,600));
+
+            }catch (Exception e){}
+        } );
     }
+    public RoomRent() {
+    }
+
+    public Button getAddat() {return addat;}
 
     public Button getEdit() {
         return edit;

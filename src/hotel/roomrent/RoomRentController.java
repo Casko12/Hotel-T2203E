@@ -30,6 +30,7 @@ public class RoomRentController implements Initializable {
     public TableColumn<RoomRent, Date> dateIn;
     public TableColumn<RoomRent, Date> dateOut;
     public TableColumn<RoomRent, Button> edit;
+    public TableColumn<RoomRent, Button> addat;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -38,13 +39,12 @@ public class RoomRentController implements Initializable {
         dateIn.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
         dateOut.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
         edit.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("edit"));
+        addat.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("addat"));
 
         ObservableList<RoomRent> rr = FXCollections.observableArrayList();
         RoomRentRepository rrr = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
         rr.addAll(rrr.all());
         tbRoomRent.setItems(rr);
-
-
     }
 
     public void onToBackHome() throws Exception{
