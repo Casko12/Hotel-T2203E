@@ -138,4 +138,9 @@ public class CustomerRepository implements HotelRepository<Customer> {
         }
         return null;
     }
+
+    @Override
+    public boolean checkin(Customer customer) {
+        return false;
+    }
 }

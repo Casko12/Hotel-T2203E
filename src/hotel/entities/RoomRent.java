@@ -5,8 +5,9 @@ import hotel.dao.impls.CustomerRepository;
 import hotel.dao.impls.RoomRepository;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
-import hotel.roomrent.AddAfterCheckin;
-import hotel.roomrent.EditRoomRentController;
+import hotel.roomrent.after.AddAfterCheckin;
+import hotel.roomrent.checkout.CheckOutController;
+import hotel.roomrent.edit.EditRoomRentController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +15,6 @@ import javafx.scene.control.Button;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class RoomRent {
     public Integer roomId;
@@ -23,6 +23,8 @@ public class RoomRent {
     public LocalDate dateout;
     public Button edit;
     public Button addat;
+
+    public Button checkout;
 
     private String roomName;
     private String customerName;
@@ -34,11 +36,12 @@ public class RoomRent {
         this.dateout = dateout;
         this.edit = new Button("Edit");
         this.addat = new Button("Addafter");
+        this.checkout = new Button("checkout");
 
         this.edit.setOnAction((event) ->{
             try {
                 EditRoomRentController.editedRoomRent = this;
-                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/editroomrent.fxml"));
+                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/edit/editroomrent.fxml"));
                 Main.rootStage.setTitle("EditRoomRent");
                 Main.rootStage.setScene(new Scene(edit,800,600));
 
@@ -48,12 +51,23 @@ public class RoomRent {
         this.addat.setOnAction((event) ->{
             try {
                 AddAfterCheckin.addafter = this;
-                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/addaftercheckin.fxml"));
+                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/after/addaftercheckin.fxml"));
                 Main.rootStage.setTitle("AddAfterChekin");
                 Main.rootStage.setScene(new Scene(edit,800,600));
 
             }catch (Exception e){}
         } );
+
+        this.checkout.setOnAction(event -> {
+            try {
+                CheckOutController.checkout = this;
+                Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent/checkout/checkout.fxml"));
+                Scene listScene = new Scene(listToRoomRent, 800, 600);
+                Main.rootStage.setTitle("RoomRent List");
+                Main.rootStage.setScene(listScene);
+
+            }catch (Exception e){}
+        });
     }
     public RoomRent() {
     }
@@ -80,6 +94,14 @@ public class RoomRent {
 
     public LocalDate getDateout() {
         return dateout;
+    }
+
+    public Button getCheckout() {
+        return checkout;
+    }
+
+    public void setCheckout(Button checkout) {
+        this.checkout = checkout;
     }
 
     public void setDateout(LocalDate dateout) {
@@ -110,6 +132,7 @@ public class RoomRent {
     public void setRoomName(String roomName) {
         this.roomName = roomName;
     }
+
     public Room room(){
         return ((RoomRepository) RepositoryFactory.creHotelRepository(RepoType.ROOM)).findOne(this.getRoomId());
     }

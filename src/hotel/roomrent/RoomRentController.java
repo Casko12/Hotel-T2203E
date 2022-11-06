@@ -5,10 +5,6 @@ import hotel.dao.impls.RoomRentRepository;
 import hotel.entities.RoomRent;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
-import javafx.beans.InvalidationListener;
-import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,7 +26,9 @@ public class RoomRentController implements Initializable {
     public TableColumn<RoomRent, Date> dateIn;
     public TableColumn<RoomRent, Date> dateOut;
     public TableColumn<RoomRent, Button> edit;
-    public static RoomRent roomRent;
+
+    public TableColumn<RoomRent,Button> checkout;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         roomName.setCellValueFactory(new PropertyValueFactory<RoomRent, String>("roomName"));
@@ -38,6 +36,7 @@ public class RoomRentController implements Initializable {
         dateIn.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
         dateOut.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
         edit.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("edit"));
+        checkout.setCellValueFactory(new PropertyValueFactory<>("checkout"));
 
         RoomRentRepository rr = (RoomRentRepository)RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
         tbRoomRent.getItems().addAll(rr.all());
@@ -53,7 +52,7 @@ public class RoomRentController implements Initializable {
     }
 
     public void add(ActionEvent actionEvent) throws Exception{
-        Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/roomrent/add.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/roomrent/add/add.fxml"));
         Scene listScene = new Scene(listPage, 800, 600);
         Main.rootStage.setTitle("Home");
         Main.rootStage.setScene(listScene);

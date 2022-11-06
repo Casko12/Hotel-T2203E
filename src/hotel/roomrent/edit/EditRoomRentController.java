@@ -1,4 +1,4 @@
-package hotel.roomrent;
+package hotel.roomrent.edit;
 
 import hotel.Main;
 import hotel.entities.RoomRent;
@@ -39,7 +39,7 @@ public class EditRoomRentController implements Initializable {
     }
 
     public void Back(ActionEvent actionEvent) throws Exception{
-        Parent listToRoomRent = FXMLLoader.load(getClass().getResource("./roomrent.fxml"));
+        Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent.fxml"));
         Scene listScene = new Scene(listToRoomRent, 800, 600);
         Main.rootStage.setTitle("RoomRent List");
         Main.rootStage.setScene(listScene);

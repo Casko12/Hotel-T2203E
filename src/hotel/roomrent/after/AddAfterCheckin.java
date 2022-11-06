@@ -1,4 +1,4 @@
-package hotel.roomrent;
+package hotel.roomrent.after;
 
 import hotel.Main;
 import hotel.dao.impls.RoomRentRepository;

@@ -58,7 +58,7 @@ public class RoomRepository implements HotelRepository<Room> {
 
     @Override
     public boolean update(Room room) {
-return false;
+        return false;
     }
 
     @Override
@@ -88,4 +88,8 @@ return false;
         return null;
     }
 
+    @Override
+    public boolean checkin(Room room) {
+        return false;
+    }
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<Pane fx:controller="hotel.roomrent.EditRoomRentController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="hotel.roomrent.edit.EditRoomRentController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField fx:id="txtRoom" layoutX="101.0" layoutY="47.0" promptText="Room " />
       <TextField fx:id="txtName" layoutX="101.0" layoutY="116.0" promptText="Name" />

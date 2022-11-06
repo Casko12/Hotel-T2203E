@@ -1,4 +1,4 @@
-package hotel.roomrent;
+package hotel.roomrent.add;
 
 import hotel.Main;
 import hotel.dao.impls.CustomerRepository;
@@ -76,7 +76,7 @@ public class  AddController implements Initializable {
 
 
     public void Back() throws Exception{
-        Parent listToRoomRent = FXMLLoader.load(getClass().getResource("./roomrent.fxml"));
+        Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent.fxml"));
         Scene listScene = new Scene(listToRoomRent, 800, 600);
         Main.rootStage.setTitle("RoomRent List");
         Main.rootStage.setScene(listScene);

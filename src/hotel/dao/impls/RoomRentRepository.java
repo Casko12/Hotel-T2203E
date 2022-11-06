@@ -1,6 +1,7 @@
 package hotel.dao.impls;
 
 import hotel.dao.interfaces.HotelRepository;
+
 import hotel.entities.RoomRent;
 import hotel.helper.Connector;
 
@@ -54,6 +55,22 @@ public class RoomRentRepository implements HotelRepository<RoomRent> {
     public boolean update(RoomRent roomRent) {
         try {
             String sql_txt = "update room set Status=1 where id =?";
+            Connector conn = Connector.getInstance();
+            ArrayList ls = new ArrayList<>();
+            ls.add(roomRent.getRoomId());
+            if(conn.execute(sql_txt,ls)){
+                return true;
+            }
+
+        }catch (Exception e){}
+        return false;
+    }
+
+
+    @Override
+    public boolean checkin(RoomRent roomRent) {
+        try {
+            String sql_txt = "update room set Status=0 where id =?";
             Connector conn = Connector.getInstance();
             ArrayList ls = new ArrayList<>();
             ls.add(roomRent.getRoomId());

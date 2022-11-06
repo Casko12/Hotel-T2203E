@@ -6,17 +6,18 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.RoomRentController">
    <children>
-      <TableView fx:id="tbRoomRent" layoutX="7.0" layoutY="72.0" prefHeight="200.0" prefWidth="589.0">
+      <TableView fx:id="tbRoomRent" layoutX="7.0" layoutY="72.0" prefHeight="200.0" prefWidth="584.0">
         <columns>
-          <TableColumn fx:id="roomName" prefWidth="78.0" text="Room Name" />
-          <TableColumn fx:id="customerName" prefWidth="149.0" text="Customer Name" />
-            <TableColumn fx:id="dateIn" prefWidth="106.0" text="Date In" />
-            <TableColumn fx:id="dateOut" prefWidth="116.0" text="Date Out" />
-            <TableColumn fx:id="edit" text="Edit" />
-            <TableColumn fx:id="addat" text="AddAfter" />
+          <TableColumn fx:id="roomName" prefWidth="82.0" text="Room Name" />
+          <TableColumn fx:id="customerName" prefWidth="111.0" text="Customer Name" />
+            <TableColumn fx:id="dateIn" prefWidth="89.0" text="Date In" />
+            <TableColumn fx:id="dateOut" text="Date Out" />
+            <TableColumn fx:id="edit" prefWidth="66.0" text="Edit" />
+            <TableColumn fx:id="addat" prefWidth="81.0" text="AddAfter" />
+            <TableColumn fx:id="checkout" prefWidth="72.0" text="CheckOut" />
         </columns>
       </TableView>
       <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#onToBackHome" text="&lt;&lt; Back Home" />
-      <Button onAction="#add" layoutX="464.0" layoutY="308.0" mnemonicParsing="false" text="ADD" />
+      <Button layoutX="492.0" layoutY="28.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="87.0" text="ADD" />
    </children>
 </Pane>
