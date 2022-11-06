@@ -54,7 +54,7 @@ public class RoomRentController implements Initializable {
     public void add(ActionEvent actionEvent) throws Exception{
         Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/roomrent/add/add.fxml"));
         Scene listScene = new Scene(listPage, 800, 600);
-        Main.rootStage.setTitle("Home");
+        Main.rootStage.setTitle("Add");
         Main.rootStage.setScene(listScene);
     }
 }

@@ -49,4 +49,10 @@ public class RoomController implements Initializable {
         Main.rootStage.setTitle("Home");
         Main.rootStage.setScene(new Scene(listRoom,800,600));
     }
+
+    public void gotoRoomRent(ActionEvent actionEvent) throws Exception {
+        Parent listRoom = FXMLLoader.load(getClass().getResource("../roomrent/roomrent.fxml"));
+        Main.rootStage.setTitle("RoomRent");
+        Main.rootStage.setScene(new Scene(listRoom,800,600));
+    }
 }

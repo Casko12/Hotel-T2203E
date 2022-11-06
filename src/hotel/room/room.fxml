@@ -14,7 +14,7 @@
             <TableColumn fx:id="tStatus" minWidth="0.0" prefWidth="151.0" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="62.0" layoutY="27.0" mnemonicParsing="false" onAction="#backToHome" text="&lt;&lt;Back Home" />
-
+       <Button layoutX="62.0" layoutY="27.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="25.0" prefWidth="130.0" text="&lt;&lt;Back Home" />
+       <Button onAction="#gotoRoomRent" layoutX="446.0" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Go To Room Rent&gt;&gt;" />
    </children>
 </Pane>
