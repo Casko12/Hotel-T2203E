@@ -6,13 +6,13 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.add.AddController">
    <children>
-      <DatePicker fx:id="txtDate" layoutX="87.0" layoutY="254.0" />
+      <DatePicker fx:id="txtDate" layoutX="87.0" layoutY="254.0" promptText="Date" />
 
       <Button layoutX="101.0" layoutY="320.0" mnemonicParsing="false" onAction="#CheckIn" text="Check In" />
 
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" prefHeight="0.0" prefWidth="62.0" text="&lt;&lt; Back" />
-      <ComboBox fx:id="room" layoutX="87.0" layoutY="60.0" prefWidth="150.0" />
-      <ComboBox fx:id="customer" layoutX="87.0" layoutY="115.0" prefWidth="150.0" />
-      <ComboBox fx:id="id" layoutX="87.0" layoutY="175.0" prefWidth="150.0" />
+      <ComboBox fx:id="room" layoutX="87.0" layoutY="60.0" prefWidth="150.0" promptText="Select Room" />
+      <ComboBox fx:id="customer" layoutX="87.0" layoutY="115.0" prefWidth="150.0" promptText="Select Name" />
+      <ComboBox fx:id="id" layoutX="87.0" layoutY="175.0" prefWidth="150.0" promptText="Select CMT" />
    </children>
 </Pane>
