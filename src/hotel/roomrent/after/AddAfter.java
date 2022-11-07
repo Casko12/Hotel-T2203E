@@ -41,8 +41,8 @@ public class AddAfter implements Initializable {
         in.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
         out.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
         ObservableList <RoomRent> ls = FXCollections.observableArrayList();
-        RoomRentRepository rp = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
-        ls.addAll(rp.all());
+        RoomRentRepository rr = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
+        ls.addAll(rr.all());
         tbAfter.setItems(ls);
     }
     public void add(ActionEvent actionEvent) {
