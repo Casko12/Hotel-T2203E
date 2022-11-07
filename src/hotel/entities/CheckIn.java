@@ -50,3 +50,4 @@ public class CheckIn {
         this.date = date;
     }
 }
+//

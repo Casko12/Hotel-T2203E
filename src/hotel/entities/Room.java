@@ -15,9 +15,6 @@ public class Room {
     public String type;
     public Integer status;
 
-    public Button datphong;
-    public Button chinhsua;
-
     public String statusLable;
 
     public Room() {
@@ -28,21 +25,7 @@ public class Room {
         this.name = name;
         this.type = type;
         this.status = status;
-        this.datphong = new Button("Đặt Phòng");
-        this.datphong.setOnAction((event) -> {
-            try {
-//                CheckInController.checkInRoom = this;
-                Parent checkin = FXMLLoader.load(getClass().getResource("../room/checkin.fxml"));
-                Main.rootStage.setTitle("CheckIn");
-                Main.rootStage.setScene(new Scene(checkin,800,600));
-            }catch (Exception e){}
-        });
-        this.chinhsua = new Button("Chỉnh sửa");
-        this.chinhsua.setOnAction(event -> {
-            try {
 
-            }catch (Exception e){}
-        });
     }
 
     public Integer getId() {
@@ -81,22 +64,6 @@ public class Room {
         this.status = status;
     }
 
-    public Button getDatphong() {
-        return datphong;
-    }
-
-    public void setDatphong(Button datphong) {
-        this.datphong = datphong;
-    }
-
-    public Button getChinhsua() {
-        return chinhsua;
-    }
-
-    public void setChinhsua(Button chinhsua) {
-        this.chinhsua = chinhsua;
-    }
-
     public String getStatusLable() {
         return status==0?"Phòng Trống":"Đang Thuê";
     }
@@ -106,3 +73,4 @@ public class Room {
     }
 
 }
+//

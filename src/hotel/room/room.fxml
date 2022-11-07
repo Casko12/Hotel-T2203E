@@ -18,3 +18,4 @@
        <Button onAction="#gotoRoomRent" layoutX="446.0" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Go To Room Rent&gt;&gt;" />
    </children>
 </Pane>
+<!---->

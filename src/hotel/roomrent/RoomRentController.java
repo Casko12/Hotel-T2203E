@@ -30,7 +30,8 @@ public class RoomRentController implements Initializable {
     public TableColumn<RoomRent, Date> dateIn;
     public TableColumn<RoomRent, Date> dateOut;
     public TableColumn<RoomRent, Button> edit;
-    public TableColumn<RoomRent, Button> addat;
+    public TableColumn<RoomRent,Button> checkout;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,7 +40,7 @@ public class RoomRentController implements Initializable {
         dateIn.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
         dateOut.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
         edit.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("edit"));
-        addat.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("addat"));
+        checkout.setCellValueFactory(new PropertyValueFactory<>("checkout"));
 
         ObservableList<RoomRent> rr = FXCollections.observableArrayList();
         RoomRentRepository rrr = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
@@ -54,7 +55,11 @@ public class RoomRentController implements Initializable {
         Main.rootStage.setScene(listScene);
     }
 
-    public void add(ActionEvent actionEvent) {
-
+    public void add(ActionEvent actionEvent) throws Exception{
+        Parent listPage = FXMLLoader.load(getClass().getResource("../roomrent/add/add.fxml"));
+        Scene listScene = new Scene(listPage, 800, 600);
+        Main.rootStage.setTitle("Home");
+        Main.rootStage.setScene(listScene);
     }
 }
+//

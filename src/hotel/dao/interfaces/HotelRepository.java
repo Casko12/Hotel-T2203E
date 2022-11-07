@@ -10,3 +10,4 @@ public interface HotelRepository<S> {
     boolean checkin(S s);
     S findOne(Integer id);
 }
+//

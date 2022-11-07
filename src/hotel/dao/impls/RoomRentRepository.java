@@ -92,3 +92,4 @@ public class RoomRentRepository implements HotelRepository<RoomRent> {
         return null;
     }
 }
+//

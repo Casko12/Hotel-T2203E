@@ -22,9 +22,10 @@ public class HomeController {
     }
 
     public void onToRoomRent(ActionEvent actionEvent) throws Exception {
-        Parent listPage = FXMLLoader.load(getClass().getResource("roomrent/roomrent.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("./roomrent/roomrent.fxml"));
         Scene listScene = new Scene(listPage,800,600);
         Main.rootStage.setTitle("Room Rent");
         Main.rootStage.setScene(listScene);
     }
 }
+//

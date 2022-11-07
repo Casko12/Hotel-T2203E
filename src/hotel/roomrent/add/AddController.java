@@ -61,6 +61,7 @@ public class  AddController implements Initializable {
             ArrayList<RoomRent> ls = new ArrayList<>();
             ls.addAll(rr.all());
             RoomRent r = new RoomRent(selectedRoom.getId(),selectCName.getId());
+
             if(rr.create(r)){
                 rr.update(r);
                 Back();
@@ -76,3 +77,4 @@ public class  AddController implements Initializable {
         Main.rootStage.setScene(listScene);
     }
 }
+//

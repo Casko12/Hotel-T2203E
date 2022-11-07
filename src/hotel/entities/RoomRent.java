@@ -6,7 +6,8 @@ import hotel.dao.impls.RoomRepository;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
 
-import hotel.roomrent.after.AddAfter;
+
+import hotel.roomrent.checkout.CheckOutController;
 import hotel.roomrent.edit.EditRoomRentController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,6 +24,7 @@ public class RoomRent {
     public Date dateout;
     public Button edit;
     public Button addat;
+    public Button checkout;
 
     private String roomName;
     private String customerName;
@@ -33,7 +35,7 @@ public class RoomRent {
         this.datein = datein;
         this.dateout = dateout;
         this.edit = new Button("Edit");
-        this.addat = new Button("Addafter");
+        this.checkout = new Button("checkout");
 
         this.edit.setOnAction((event) ->{
             try {
@@ -45,17 +47,22 @@ public class RoomRent {
             }catch (Exception e){}
         } );
 
-        this.addat.setOnAction((event) ->{
+        this.checkout.setOnAction((event) ->{
             try {
-                AddAfter.addafter = this;
-                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/after/addaftercheckin.fxml"));
-                Main.rootStage.setTitle("AddAfterChekin");
+                CheckOutController.checkout = this;
+                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/checkout/checkout.fxml"));
+                Main.rootStage.setTitle("Checkout");
                 Main.rootStage.setScene(new Scene(edit,800,600));
 
             }catch (Exception e){}
         } );
+
+
     }
-    public RoomRent(TableColumn<RoomRent, String> id, TableColumn<RoomRent, String> selectCNameId) {
+
+    public RoomRent(Integer roomId, Integer customerId) {
+        this.roomId = roomId;
+        this.customerId = customerId;
     }
 
     public Button getAddat() {return addat;}
@@ -119,4 +126,4 @@ public class RoomRent {
         return ((CustomerRepository)RepositoryFactory.creHotelRepository(RepoType.CUSTOMER)).findOne(this.getCustomerId());
     }
 }
-
+//
