@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.checkout.CheckOutController">
+   <children>
+      <TextField fx:id="txtRoomName" layoutX="40.0" layoutY="99.0" promptText="Room_Name " />
+      <DatePicker fx:id="txtDateOut" layoutX="40.0" layoutY="188.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" />
+      <Button layoutX="40.0" layoutY="34.0" mnemonicParsing="false" onAction="#bttBack" prefHeight="25.0" prefWidth="90.0" text="&lt;&lt;Back" />
+      <Button onAction="#checkOut" layoutX="40.0" layoutY="273.0" mnemonicParsing="false" text="CheckOut" />
+   </children>
+</Pane>
+<!---->
