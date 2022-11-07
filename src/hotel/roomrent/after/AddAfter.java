@@ -1,10 +1,7 @@
 package hotel.roomrent.after;
 
 import hotel.Main;
-import hotel.dao.impls.CustomerRepository;
 import hotel.dao.impls.RoomRentRepository;
-import hotel.dao.impls.RoomRepository;
-import hotel.entities.Customer;
 import hotel.entities.RoomRent;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
@@ -15,13 +12,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.sql.Date;
 import java.util.ResourceBundle;
 
 public class AddAfter implements Initializable {
@@ -32,31 +29,22 @@ public class AddAfter implements Initializable {
     public TableView<RoomRent> tbAfter;
     public TableColumn< RoomRent,String > name;
     public TableColumn< RoomRent,String > id;
-    public TableColumn< RoomRent,String > in;
-    public TableColumn< RoomRent,String > out;
+    public TableColumn<RoomRent, Date> in;
+    public TableColumn<RoomRent, Date> out;
     public static ObservableList<RoomRent> list = FXCollections.observableArrayList();
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+        public void initialize(URL location, ResourceBundle resources) {
         name.setCellValueFactory(new PropertyValueFactory<RoomRent, String>("name"));
         id.setCellValueFactory(new PropertyValueFactory<RoomRent, String>("cmt"));
-        tdEdit.setCellValueFactory(new PropertyValueFactory<Customer, Button>("edit"));
-        tdEdit.setCellValueFactory(new PropertyValueFactory<Customer, Button>("edit"));
-        ObservableList <Customer> ls = FXCollections.observableArrayList();
-        CustomerRepository rp = (CustomerRepository)RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
+        in.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
+        out.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
+        ObservableList <RoomRent> ls = FXCollections.observableArrayList();
+        RoomRentRepository rp = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
         ls.addAll(rp.all());
-        tbCustomers.setItems(ls);
+        tbAfter.setItems(ls);
     }
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        if(addafter != null){
-        }
-    }
-
-
     public void add(ActionEvent actionEvent) {
 
     }

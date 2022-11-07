@@ -5,6 +5,10 @@ import hotel.dao.impls.RoomRentRepository;
 import hotel.entities.RoomRent;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,8 +30,7 @@ public class RoomRentController implements Initializable {
     public TableColumn<RoomRent, Date> dateIn;
     public TableColumn<RoomRent, Date> dateOut;
     public TableColumn<RoomRent, Button> edit;
-
-    public TableColumn<RoomRent,Button> checkout;
+    public TableColumn<RoomRent, Button> addat;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -36,12 +39,12 @@ public class RoomRentController implements Initializable {
         dateIn.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("datein"));
         dateOut.setCellValueFactory(new PropertyValueFactory<RoomRent, Date>("dateout"));
         edit.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("edit"));
-        checkout.setCellValueFactory(new PropertyValueFactory<>("checkout"));
+        addat.setCellValueFactory(new PropertyValueFactory<RoomRent, Button>("addat"));
 
-        RoomRentRepository rr = (RoomRentRepository)RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
-        tbRoomRent.getItems().addAll(rr.all());
-
-
+        ObservableList<RoomRent> rr = FXCollections.observableArrayList();
+        RoomRentRepository rrr = (RoomRentRepository) RepositoryFactory.creHotelRepository(RepoType.ROOMRENT);
+        rr.addAll(rrr.all());
+        tbRoomRent.setItems(rr);
     }
 
     public void onToBackHome() throws Exception{
@@ -51,10 +54,7 @@ public class RoomRentController implements Initializable {
         Main.rootStage.setScene(listScene);
     }
 
-    public void add(ActionEvent actionEvent) throws Exception{
-        Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/roomrent/add/add.fxml"));
-        Scene listScene = new Scene(listPage, 800, 600);
-        Main.rootStage.setTitle("Add");
-        Main.rootStage.setScene(listScene);
+    public void add(ActionEvent actionEvent) {
+
     }
 }

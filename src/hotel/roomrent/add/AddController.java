@@ -68,13 +68,7 @@ public class  AddController implements Initializable {
                 System.out.println("Error");
             }
         }catch (Exception e){}
-
-
-
     }
-
-
-
     public void Back() throws Exception{
         Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent.fxml"));
         Scene listScene = new Scene(listToRoomRent, 800, 600);
