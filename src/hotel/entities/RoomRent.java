@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 
 import java.util.Date;
 
@@ -54,7 +55,7 @@ public class RoomRent {
             }catch (Exception e){}
         } );
     }
-    public RoomRent(Integer id, Integer selectCNameId) {
+    public RoomRent(TableColumn<RoomRent, String> id, TableColumn<RoomRent, String> selectCNameId) {
     }
 
     public Button getAddat() {return addat;}

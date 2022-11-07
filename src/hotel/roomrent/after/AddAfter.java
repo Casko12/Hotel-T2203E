@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,12 +20,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AddAfter implements Initializable {
     public TextField fullname;
     public TextField cmt;
+    public DatePicker datein;
+    public DatePicker dateout
 
+            ;
     public static RoomRent addafter;
     public TableView<RoomRent> tbAfter;
     public TableColumn< RoomRent,String > name;
@@ -46,10 +52,27 @@ public class AddAfter implements Initializable {
         tbAfter.setItems(ls);
     }
     public void add(ActionEvent actionEvent) {
+        try{
+            String txtname = fullname.getText();
+            String txtcmt = cmt.getId();
+            LocalDate datein = null;
+            LocalDate dateout = null;
+            RoomRentRepository rr = new RoomRentRepository();
+            ArrayList<RoomRent> ls = new ArrayList<>();
+            ls.addAll(rr.all());
+            RoomRent r = new RoomRent(name,id);
+            if(rr.create(r)){
+                rr.update(r);
+                back();
+            }else {
+                System.out.println("Error");
+            }
+        }catch (Exception e){
 
+        }
     }
 
-    public void back(ActionEvent actionEvent) throws Exception {
+    private void back() throws Exception {
         Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent.fxml"));
         Scene listScene = new Scene(listToRoomRent, 800, 600);
         Main.rootStage.setTitle("Add After Checkin");
