@@ -5,16 +5,16 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.after.AddAfter">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.after.AddAfter">
    <children>
-      <Text layoutX="441.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add More Person" />
-      <TextField fx:id="fullname" layoutX="758.0" layoutY="201.0" />
-      <TextField fx:id="cmt" layoutX="758.0" layoutY="342.0" />
-      <Text layoutX="758.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name" />
-      <Text layoutX="758.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID " />
-      <Button layoutX="813.0" layoutY="453.0" mnemonicParsing="false" onAction="#add" text="Add" />
-      <Button layoutX="60.0" layoutY="35.0" mnemonicParsing="false" onAction="#back" text="Back To Home" />
-      <TableView fx:id="tbAfter" layoutX="42.0" layoutY="201.0" prefHeight="200.0" prefWidth="693.0">
+      <Text layoutX="239.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add More Person" />
+      <TextField fx:id="fullname" layoutX="14.0" layoutY="96.0" />
+      <TextField fx:id="cmt" layoutY="162.0" />
+      <Text layoutX="23.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name" />
+      <Text layoutX="12.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID " />
+      <Button layoutX="6.0" layoutY="211.0" mnemonicParsing="false" onAction="#add" text="Add" />
+      <Button layoutX="23.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" text="Back To Home" />
+      <TableView fx:id="tbAfter" layoutX="69.0" layoutY="201.0" prefHeight="130.0" prefWidth="693.0">
         <columns>
           <TableColumn fx:id="name" prefWidth="223.0" text="Name" />
           <TableColumn fx:id="id" minWidth="0.0" prefWidth="196.0" text="CMT" />
@@ -22,6 +22,6 @@
             <TableColumn fx:id="out" minWidth="0.0" prefWidth="150.0" text="Date Out" />
         </columns>
       </TableView>
-      <Text layoutX="312.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="People in room" />
+      <Text layoutX="347.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="People in room" />
    </children>
 </Pane>

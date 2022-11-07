@@ -37,7 +37,7 @@ public class RoomRent {
         this.edit.setOnAction((event) ->{
             try {
                 EditRoomRentController.editedRoomRent = this;
-                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/editroomrent.fxml"));
+                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/edit/editroomrent.fxml"));
                 Main.rootStage.setTitle("EditRoomRent");
                 Main.rootStage.setScene(new Scene(edit,800,600));
 
@@ -47,14 +47,14 @@ public class RoomRent {
         this.addat.setOnAction((event) ->{
             try {
                 AddAfter.addafter = this;
-                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/addaftercheckin.fxml"));
+                Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/after/addaftercheckin.fxml"));
                 Main.rootStage.setTitle("AddAfterChekin");
                 Main.rootStage.setScene(new Scene(edit,800,600));
 
             }catch (Exception e){}
         } );
     }
-    public RoomRent() {
+    public RoomRent(Integer id, Integer selectCNameId) {
     }
 
     public Button getAddat() {return addat;}
