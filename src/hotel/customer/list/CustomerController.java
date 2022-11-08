@@ -3,6 +3,7 @@ package hotel.customer.list;
 import hotel.Main;
 import hotel.dao.impls.CustomerRepository;
 import hotel.entities.Customer;
+import hotel.entities.RoomRent;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -26,14 +28,17 @@ public class CustomerController implements Initializable {
 
     public TableColumn <Customer, String> tdName;
     public TableColumn <Customer, String> tdCMT;
-    public TableColumn tdRoom;
     public TableColumn <Customer, Button> tdEdit;
     public static ObservableList<Customer> list = FXCollections.observableArrayList();
+    public TableColumn <RoomRent, Date> tdDatein;
+    public TableColumn <RoomRent, Date> tdDateout;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     tdName.setCellValueFactory(new PropertyValueFactory<Customer, String>("name"));
     tdCMT.setCellValueFactory(new PropertyValueFactory<Customer, String>("cmt"));
+    tdDatein.setCellValueFactory(new PropertyValueFactory< RoomRent, Date>("dateIn"));
+    tdDateout.setCellValueFactory(new PropertyValueFactory< RoomRent, Date>("dateOut"));
 
     tdEdit.setCellValueFactory(new PropertyValueFactory<Customer, Button>("edit"));
         ObservableList <Customer> ls = FXCollections.observableArrayList();

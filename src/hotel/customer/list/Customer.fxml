@@ -12,8 +12,8 @@
             <columns>
                 <TableColumn fx:id="tdName" prefWidth="204.0" text="Name"/>
                 <TableColumn fx:id="tdCMT" prefWidth="127.0" text="National ID/ Passport"/>
-                <TableColumn fx:id="tdEdit1" prefWidth="94.0" text="Date In"/>
-                <TableColumn fx:id="tdEdit11" prefWidth="79.0" text="Date Out"/>
+                <TableColumn fx:id="tdDatein" prefWidth="94.0" text="Date In"/>
+                <TableColumn fx:id="tdDateout" prefWidth="79.0" text="Date Out"/>
                 <TableColumn fx:id="tdEdit" prefWidth="73.0" text="Edit"/>
             </columns>
         </TableView>
