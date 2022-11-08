@@ -9,8 +9,8 @@
       <TableView fx:id="tbRoom" layoutX="5.0" layoutY="74.0" prefHeight="205.0" prefWidth="606.0">
         <columns>
           <TableColumn fx:id="tId" prefWidth="100.0" text="ID" />
-          <TableColumn fx:id="tNameRoom" minWidth="9.0" prefWidth="170.0" text="Name_Room" />
-            <TableColumn fx:id="tTypeRoom" minWidth="3.0" prefWidth="180.0" text="Type_Room" />
+          <TableColumn fx:id="tNameRoom" minWidth="9.0" prefWidth="170.0" text="Name Room" />
+            <TableColumn fx:id="tTypeRoom" minWidth="3.0" prefWidth="180.0" text="Type Room" />
             <TableColumn fx:id="tStatus" minWidth="0.0" prefWidth="151.0" text="Status" />
         </columns>
       </TableView>
