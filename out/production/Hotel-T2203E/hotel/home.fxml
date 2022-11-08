@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
 
-
-<Pane fx:controller="hotel.HomeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.HomeController" maxHeight="-Infinity"
+      maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/8">
    <children>
-      <Text fill="#ee0e0e" layoutX="162.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ KHÁCH SẠN">
+      <Text fill="#ee0e0e" layoutX="162.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="QUẢN LÝ KHÁCH SẠN">
          <font>
-            <Font size="28.0" />
+            <Font size="28.0"/>
          </font>
       </Text>
-      <Button onAction="#onToListRoom" layoutX="195.0" layoutY="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="210.0" text="Danh Sách Phòng" />
-      <Button onAction="#onToListCustomer" layoutX="195.0" layoutY="187.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="210.0" text="Danh Sách Khách Hàng" />
-      <Button onAction="#onToRoomRent" layoutX="195.0" layoutY="266.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="210.0" text="Quản Lý Phòng Đang Thuê" />
-      <Text layoutX="438.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Được thực hiện bởi nhóm 1" />
+      <Button onAction="#onToListRoom" layoutX="195.0" layoutY="108.0" mnemonicParsing="false" prefHeight="44.0"
+              prefWidth="210.0" text="Danh Sách Phòng"/>
+      <Button onAction="#onToListCustomer" layoutX="195.0" layoutY="187.0" mnemonicParsing="false" prefHeight="44.0"
+              prefWidth="210.0" text="Danh Sách Khách Hàng"/>
+      <Button onAction="#onToRoomRent" layoutX="195.0" layoutY="266.0" mnemonicParsing="false" prefHeight="44.0"
+              prefWidth="210.0" text="Quản Lý Phòng Đang Thuê"/>
+      <Text layoutX="438.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Được thực hiện bởi nhóm 1"/>
    </children>
 </Pane>

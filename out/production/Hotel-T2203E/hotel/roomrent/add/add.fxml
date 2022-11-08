@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-
 <!---->
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.add.AddController">
    <children>
-      <DatePicker fx:id="txtDate" layoutX="87.0" layoutY="200.0" prefHeight="25.0" prefWidth="150.0" promptText="Date" />
+      <DatePicker fx:id="txtDate" layoutX="87.0" layoutY="200.0" prefHeight="25.0" prefWidth="150.0" promptText="Date"/>
 
-      <Button layoutX="101.0" layoutY="320.0" mnemonicParsing="false" onAction="#CheckIn" text="Check In" />
+      <Button layoutX="101.0" layoutY="320.0" mnemonicParsing="false" onAction="#CheckIn" text="Check In"/>
 
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" prefHeight="0.0" prefWidth="62.0" text="&lt;&lt; Back" />
-      <ComboBox fx:id="room" layoutX="87.0" layoutY="60.0" prefWidth="150.0" promptText="Select Room" />
-      <ComboBox fx:id="customer" layoutX="396.0" layoutY="60.0" onAction="#chonkhach" prefWidth="150.0" promptText="Select Name" />
-      <TextField fx:id="txtname" layoutX="397.0" layoutY="127.0" promptText="Name" />
-      <TextField fx:id="txtcmt" layoutX="397.0" layoutY="200.0" promptText="CMT" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" prefHeight="0.0" prefWidth="62.0"
+              text="&lt;&lt; Back"/>
+      <ComboBox fx:id="room" layoutX="87.0" layoutY="60.0" prefWidth="150.0" promptText="Select Room"/>
+      <ComboBox fx:id="customer" layoutX="396.0" layoutY="60.0" onAction="#chonkhach" prefWidth="150.0"
+                promptText="Select Name"/>
+      <TextField fx:id="txtname" layoutX="397.0" layoutY="127.0" promptText="Name"/>
+      <TextField fx:id="txtcmt" layoutX="397.0" layoutY="200.0" promptText="CMT"/>
    </children>
 </Pane>
