@@ -2,6 +2,8 @@ package hotel.roomrent.checkout;
 
 import hotel.Main;
 import hotel.dao.impls.RoomRentRepository;
+import hotel.dao.impls.RoomRepository;
+import hotel.entities.Room;
 import hotel.entities.RoomRent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -25,11 +29,14 @@ public class CheckOutController implements Initializable {
 
     public static RoomRent checkout;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
             if (checkout !=null){
                 txtRoomName.setText(checkout.getRoomName());
             }
+            txtDateOut.setValue(LocalDate.now());
+
 
     }
 
@@ -47,11 +54,15 @@ public class CheckOutController implements Initializable {
             alert.setHeaderText("You want to Checkout? "+checkout.getRoomName());
             Optional<ButtonType> option = alert.showAndWait();
             if (option.get()==ButtonType.OK){
-                RoomRentRepository rr = new RoomRentRepository();
 
-                ArrayList ls = new ArrayList<>();
+                Date d = Date.valueOf(txtDateOut.getValue());
+                RoomRentRepository rr = new RoomRentRepository();
+                ArrayList<RoomRent> ls = new ArrayList<>();
                 ls.addAll(rr.all());
-                if (rr.checkout(checkout)) {
+                RoomRent r = new RoomRent(checkout.getId(), checkout.getRoomId(),checkout.getCustomerId(),null,d);
+
+                if (rr.dateout(r)) {
+                    rr.checkout(r);
                     bttBack(null);
                 }
             }

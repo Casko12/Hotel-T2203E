@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import java.util.Date;
 
 public class RoomRent {
+    public Integer Id;
     public Integer roomId;
     public Integer customerId;
     public Date datein;
@@ -25,8 +26,10 @@ public class RoomRent {
 
     private String roomName;
     private String customerName;
+    public static RoomRent roomRent;
 
-    public RoomRent(Integer roomId, Integer customerId, Date datein, Date dateout) {
+    public RoomRent(Integer Id,Integer roomId, Integer customerId, Date datein, Date dateout) {
+        this.Id = Id;
         this.roomId = roomId;
         this.customerId = customerId;
         this.datein = datein;
@@ -46,6 +49,9 @@ public class RoomRent {
 
         this.checkout.setOnAction((event) ->{
             try {
+                if(RoomRent.roomRent != null){
+                    RoomRent.roomRent = this;
+                }
                 CheckOutController.checkout = this;
                 Parent edit = FXMLLoader.load(getClass().getResource("../roomrent/checkout/checkout.fxml"));
                 Main.rootStage.setTitle("Checkout");
@@ -57,10 +63,19 @@ public class RoomRent {
 
     }
 
-    public RoomRent(Integer roomId, Integer customerId, Date datein) {
+    public RoomRent(Integer roomId, Integer customerId, Date date) {
         this.roomId = roomId;
         this.customerId = customerId;
-        this.datein = datein;
+        this.datein = date;
+    }
+
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
     }
 
     public Button getAddat() {return addat;}

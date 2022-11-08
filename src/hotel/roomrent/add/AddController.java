@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -30,6 +31,7 @@ public class AddController implements Initializable {
     public ComboBox<Customer> customer;
     public ComboBox<Customer> id;
     public DatePicker txtDate;
+
 
 
     public static RoomRent addRoomRent;
@@ -48,6 +50,7 @@ public class AddController implements Initializable {
         CustomerRepository ccrname = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
         cname.addAll(ccrname.all());
         customer.setItems(cname);
+        txtDate.setValue(LocalDate.now());
     }
 
 
@@ -56,7 +59,7 @@ public class AddController implements Initializable {
         try {
             Room selectedRoom = room.getSelectionModel().getSelectedItem();
             Customer selectCName = customer.getSelectionModel().getSelectedItem();
-            Date d = Date.valueOf(txtDate.getValue());
+            Date d = Date.valueOf(LocalDate.now());
             RoomRentRepository rr = new RoomRentRepository();
             ArrayList<RoomRent> ls = new ArrayList<>();
             ls.addAll(rr.all());

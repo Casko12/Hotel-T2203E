@@ -17,11 +17,12 @@ public class RoomRentRepository implements HotelRepository<RoomRent> {
             Connector conn = Connector.getInstance();
             ResultSet rs = conn.query(sql_txt);
             while (rs.next()){
+                int Id = rs.getInt("id");
                 int roomId = rs.getInt("roomId");
                 int customerId = rs.getInt("customerId");
                 Date dateIn = rs.getDate("dateIn");
                 Date dateOut = rs.getDate("dateOut");
-                RoomRent r = new RoomRent(roomId, customerId, dateIn, dateOut);
+                RoomRent r = new RoomRent(Id,roomId, customerId, dateIn, dateOut);
                 RR.add(r);
 
             }
@@ -51,7 +52,25 @@ public class RoomRentRepository implements HotelRepository<RoomRent> {
 
         return false;
     }
+    public boolean dateout(RoomRent roomRent) {
+        try {
+            String sql_txt = "update roomrent set dateOut=? where id=?";
+            Connector conn = Connector.getInstance();
+            ArrayList arr = new ArrayList();
+            arr.add(roomRent.getDateout().toString());
+            arr.add(roomRent.getId());
+            System.out.println(roomRent.getDateout().toString());
+            System.out.println(roomRent.getId());
+            if (conn.execute(sql_txt, arr)) {
+                return true;
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
 
+        }
+
+        return false;
+    }
 
     @Override
     public boolean update(RoomRent roomRent) {
