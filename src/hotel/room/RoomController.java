@@ -12,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -47,7 +46,7 @@ public class RoomController implements Initializable {
     public void backToHome(ActionEvent actionEvent) throws Exception {
         Parent listRoom = FXMLLoader.load(getClass().getResource("../home.fxml"));
         Main.rootStage.setTitle("Home");
-        Main.rootStage.setScene(new Scene(listRoom,800,600));
+        Main.rootStage.setScene(new Scene(listRoom, 600, 400));
     }
 
     public void gotoRoomRent(ActionEvent actionEvent) throws Exception {

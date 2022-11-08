@@ -126,21 +126,26 @@ public class CustomerRepository implements HotelRepository<Customer> {
             Connector conn = Connector.getInstance();
             ArrayList arr = new ArrayList<>();
             arr.add(id);
-            ResultSet rs = conn.executeQuery(sql_txt,arr);
-            while (rs.next()){
+            ResultSet rs = conn.executeQuery(sql_txt, arr);
+            while (rs.next()) {
                 int Id = rs.getInt("id");
                 String name = rs.getString("name");
                 String cmt = rs.getString("cmt");
-                return new Customer(id,name,cmt);
+                return new Customer(id, name, cmt);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return null;
     }
 
     @Override
-    public boolean checkin(Customer customer) {
+    public boolean checkout(Customer customer) {
+        return false;
+    }
+
+    @Override
+    public boolean checkOutUpdate(Customer customer) {
         return false;
     }
 }

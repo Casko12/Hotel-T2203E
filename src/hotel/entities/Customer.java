@@ -1,10 +1,11 @@
 package hotel.entities;
+
 import hotel.Main;
+import hotel.customer.edit.EditCustomerController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import hotel.customer.edit.EditCustomerController;
 
 
 public class Customer{
@@ -72,7 +73,7 @@ public class Customer{
 
     @Override
     public String toString() {
-        return getName();
+        return getName() + "--" + getCmt();
     }
 }
 //

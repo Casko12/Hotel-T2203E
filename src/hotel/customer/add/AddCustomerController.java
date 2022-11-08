@@ -2,6 +2,7 @@ package hotel.customer.add;
 
 import hotel.Main;
 import hotel.dao.impls.CustomerRepository;
+import hotel.entities.Customer;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
 import javafx.event.ActionEvent;
@@ -9,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import hotel.entities.Customer;
 
 public class AddCustomerController {
     public TextField txtCustomerName;
@@ -17,7 +17,7 @@ public class AddCustomerController {
 
     public void backToList(ActionEvent actionEvent) throws Exception{
         Parent listAdd = FXMLLoader.load(getClass().getResource("../list/Customer.fxml"));
-        Scene listScene = new Scene(listAdd, 800, 600);
+        Scene listScene = new Scene(listAdd, 600, 400);
         Main.rootStage.setTitle("Customer List");
         Main.rootStage.setScene(listScene);
     }

@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.RoomRentController">
-   <children>
-      <TableView fx:id="tbRoomRent" layoutX="7.0" layoutY="72.0" prefHeight="200.0" prefWidth="584.0">
-        <columns>
-          <TableColumn fx:id="roomName" prefWidth="82.0" text="Room Name" />
-          <TableColumn fx:id="customerName" prefWidth="111.0" text="Customer Name" />
-            <TableColumn fx:id="dateIn" prefWidth="89.0" text="Date In" />
-            <TableColumn fx:id="dateOut" text="Date Out" />
-            <TableColumn fx:id="edit" prefWidth="66.0" text="Edit" />
-            <TableColumn fx:id="checkout" prefWidth="81.0" text="Checkout" />
-        </columns>
-      </TableView>
-      <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#onToBackHome" text="&lt;&lt; Back Home" />
-      <Button layoutX="492.0" layoutY="28.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="87.0" text="ADD" />
-   </children>
-</Pane>
 <!---->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.roomrent.RoomRentController">
+    <children>
+        <TableView fx:id="tbRoomRent" layoutX="8.0" layoutY="141.0" prefHeight="200.0" prefWidth="584.0">
+            <columns>
+                <TableColumn fx:id="roomName" prefWidth="82.0" text="Room Name"/>
+                <TableColumn fx:id="customerName" prefWidth="111.0" text="Customer Name"/>
+                <TableColumn fx:id="dateIn" prefWidth="89.0" text="Date In"/>
+                <TableColumn fx:id="dateOut" text="Date Out"/>
+                <TableColumn fx:id="edit" prefWidth="66.0" text="Edit"/>
+                <TableColumn fx:id="checkout" prefWidth="81.0" text="Checkout"/>
+            </columns>
+        </TableView>
+        <Button layoutX="8.0" layoutY="90.0" mnemonicParsing="false" onAction="#onToBackHome"
+                text="&lt;&lt; Back Home"/>
+        <Button layoutX="505.0" layoutY="90.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0"
+                prefWidth="87.0"
+                text="ADD"/>
+        <Text fill="#ee1515" layoutX="241.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room Rent">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Text>
+    </children>
+</Pane>

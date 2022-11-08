@@ -1,14 +1,5 @@
 package hotel.entities;
 
-import hotel.Main;
-
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-
-
-
 public class Room {
     public Integer id;
     public String name;
@@ -53,7 +44,7 @@ public class Room {
     }
     @Override
     public String toString() {
-        return getName();
+        return getName() + "--" + getType();
     }
 
     public Integer getStatus() {

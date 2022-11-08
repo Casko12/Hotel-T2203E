@@ -73,23 +73,28 @@ public class RoomRepository implements HotelRepository<Room> {
             Connector conn = Connector.getInstance();
             ArrayList arr = new ArrayList<>();
             arr.add(id);
-            ResultSet rs = conn.executeQuery(sql_txt,arr);
-            while (rs.next()){
+            ResultSet rs = conn.executeQuery(sql_txt, arr);
+            while (rs.next()) {
                 int Id = rs.getInt("id");
                 String name = rs.getString("name");
                 String type = rs.getString("type");
                 int status = rs.getInt("status");
 
-                return new Room(id,name,type,status);
+                return new Room(id, name, type, status);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return null;
     }
 
     @Override
-    public boolean checkin(Room room) {
+    public boolean checkout(Room room) {
+        return false;
+    }
+
+    @Override
+    public boolean checkOutUpdate(Room room) {
         return false;
     }
 }

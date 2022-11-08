@@ -18,13 +18,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class  AddController implements Initializable {
+public class AddController implements Initializable {
     public ComboBox<Room> room;
     public ComboBox<Customer> customer;
     public ComboBox<Customer> id;
@@ -32,6 +33,10 @@ public class  AddController implements Initializable {
 
 
     public static RoomRent addRoomRent;
+    public ComboBox cbRoom;
+    public ComboBox cbCustomer;
+    public TextField txtname;
+    public TextField txtcmt;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,10 +48,6 @@ public class  AddController implements Initializable {
         CustomerRepository ccrname = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
         cname.addAll(ccrname.all());
         customer.setItems(cname);
-        ObservableList<Customer> ccmt = FXCollections.observableArrayList();
-        CustomerRepository ccrcmt = (CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
-        ccmt.addAll(ccrcmt.cmt());
-        id.setItems(ccmt);
     }
 
 
@@ -55,26 +56,33 @@ public class  AddController implements Initializable {
         try {
             Room selectedRoom = room.getSelectionModel().getSelectedItem();
             Customer selectCName = customer.getSelectionModel().getSelectedItem();
-            Customer selectCCmt = id.getSelectionModel().getSelectedItem();
-            LocalDate dp = txtDate.getValue();
-            RoomRentRepository rr =new RoomRentRepository();
+            Date d = Date.valueOf(txtDate.getValue());
+            RoomRentRepository rr = new RoomRentRepository();
             ArrayList<RoomRent> ls = new ArrayList<>();
             ls.addAll(rr.all());
-            RoomRent r = new RoomRent(selectedRoom.getId(),selectCName.getId());
+            RoomRent r = new RoomRent(selectedRoom.getId(), selectCName.getId(), d);
 
-            if(rr.create(r)){
+            if (rr.create(r)) {
                 rr.update(r);
                 Back();
-            }else {
+            } else {
                 System.out.println("Error");
             }
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
     }
-    public void Back() throws Exception{
+
+    public void Back() throws Exception {
         Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent.fxml"));
-        Scene listScene = new Scene(listToRoomRent, 800, 600);
+        Scene listScene = new Scene(listToRoomRent, 600, 400);
         Main.rootStage.setTitle("RoomRent List");
         Main.rootStage.setScene(listScene);
+    }
+
+    public void chonkhach(ActionEvent actionEvent) {
+        Customer c = customer.getSelectionModel().getSelectedItem();
+        txtname.setText(c.getName());
+        txtcmt.setText(c.getCmt());
     }
 }
 //

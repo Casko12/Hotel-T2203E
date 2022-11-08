@@ -5,9 +5,7 @@ import hotel.dao.impls.RoomRentRepository;
 import hotel.entities.RoomRent;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
-import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +18,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.util.*;
+import java.util.Date;
+import java.util.ResourceBundle;
 
 public class RoomRentController implements Initializable {
 
@@ -50,15 +49,15 @@ public class RoomRentController implements Initializable {
 
     public void onToBackHome() throws Exception{
         Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/home.fxml"));
-        Scene listScene = new Scene(listPage, 800, 600);
+        Scene listScene = new Scene(listPage, 600, 400);
         Main.rootStage.setTitle("Home");
         Main.rootStage.setScene(listScene);
     }
 
-    public void add(ActionEvent actionEvent) throws Exception{
+    public void add(ActionEvent actionEvent) throws Exception {
         Parent listPage = FXMLLoader.load(getClass().getResource("../roomrent/add/add.fxml"));
-        Scene listScene = new Scene(listPage, 800, 600);
-        Main.rootStage.setTitle("Home");
+        Scene listScene = new Scene(listPage, 600, 400);
+        Main.rootStage.setTitle("add");
         Main.rootStage.setScene(listScene);
     }
 }

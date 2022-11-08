@@ -5,15 +5,12 @@ import hotel.dao.impls.CustomerRepository;
 import hotel.dao.impls.RoomRepository;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
-
-
 import hotel.roomrent.checkout.CheckOutController;
 import hotel.roomrent.edit.EditRoomRentController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
 
 import java.util.Date;
 
@@ -60,9 +57,10 @@ public class RoomRent {
 
     }
 
-    public RoomRent(Integer roomId, Integer customerId) {
+    public RoomRent(Integer roomId, Integer customerId, Date datein) {
         this.roomId = roomId;
         this.customerId = customerId;
+        this.datein = datein;
     }
 
     public Button getAddat() {return addat;}
@@ -122,8 +120,17 @@ public class RoomRent {
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
-    public Customer customer(){
-        return ((CustomerRepository)RepositoryFactory.creHotelRepository(RepoType.CUSTOMER)).findOne(this.getCustomerId());
+
+    public Button getCheckout() {
+        return checkout;
+    }
+
+    public void setCheckout(Button checkout) {
+        this.checkout = checkout;
+    }
+
+    public Customer customer() {
+        return ((CustomerRepository) RepositoryFactory.creHotelRepository(RepoType.CUSTOMER)).findOne(this.getCustomerId());
     }
 }
 //

@@ -33,7 +33,7 @@ public class EditCustomerController implements Initializable {
 
     public void backToList(ActionEvent actionEvent) throws Exception {
         Parent listAdd = FXMLLoader.load(getClass().getResource("../list/Customer.fxml"));
-        Scene listScene = new Scene(listAdd, 800, 600);
+        Scene listScene = new Scene(listAdd, 600, 400);
         Main.rootStage.setTitle("Customer List");
         Main.rootStage.setScene(listScene);
     }

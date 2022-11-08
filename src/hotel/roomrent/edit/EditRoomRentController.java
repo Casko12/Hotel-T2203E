@@ -40,7 +40,7 @@ public class EditRoomRentController implements Initializable {
 
     public void Back(ActionEvent actionEvent) throws Exception{
         Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent.fxml"));
-        Scene listScene = new Scene(listToRoomRent, 800, 600);
+        Scene listScene = new Scene(listToRoomRent, 600, 400);
         Main.rootStage.setTitle("RoomRent List");
         Main.rootStage.setScene(listScene);
     }

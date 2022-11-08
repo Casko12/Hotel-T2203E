@@ -2,6 +2,7 @@ package hotel.customer.list;
 
 import hotel.Main;
 import hotel.dao.impls.CustomerRepository;
+import hotel.entities.Customer;
 import hotel.enums.RepoType;
 import hotel.factory.RepositoryFactory;
 import javafx.collections.FXCollections;
@@ -14,7 +15,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import hotel.entities.Customer;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -44,7 +44,7 @@ public class CustomerController implements Initializable {
 
     public void backHome(ActionEvent actionEvent) throws Exception {
         Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/home.fxml"));
-        Scene listScene = new Scene(listPage, 800, 600);
+        Scene listScene = new Scene(listPage, 600, 400);
         Main.rootStage.setTitle("Home");
         Main.rootStage.setScene(listScene);
     }
@@ -52,8 +52,15 @@ public class CustomerController implements Initializable {
     public void onToAdd(ActionEvent actionEvent) throws Exception {
 
         Parent listPage = FXMLLoader.load(getClass().getResource("../add/AddCustomer.fxml"));
-        Scene listScene = new Scene(listPage, 800, 600);
+        Scene listScene = new Scene(listPage, 600, 400);
         Main.rootStage.setTitle("Add Customer");
+        Main.rootStage.setScene(listScene);
+    }
+
+    public void gotoRoomRent(ActionEvent actionEvent) throws Exception {
+        Parent listPage = FXMLLoader.load(getClass().getResource("../../roomrent/roomrent.fxml"));
+        Scene listScene = new Scene(listPage, 600, 400);
+        Main.rootStage.setTitle("Room Rent");
         Main.rootStage.setScene(listScene);
     }
 }

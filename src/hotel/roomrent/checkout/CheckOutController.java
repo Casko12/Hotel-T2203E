@@ -2,8 +2,6 @@ package hotel.roomrent.checkout;
 
 import hotel.Main;
 import hotel.dao.impls.RoomRentRepository;
-import hotel.dao.impls.RoomRepository;
-import hotel.entities.Room;
 import hotel.entities.RoomRent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -32,11 +30,12 @@ public class CheckOutController implements Initializable {
             if (checkout !=null){
                 txtRoomName.setText(checkout.getRoomName());
             }
+
     }
 
     public void bttBack(ActionEvent actionEvent) throws Exception {
         Parent listToRoomRent = FXMLLoader.load(getClass().getResource("../roomrent.fxml"));
-        Scene listScene = new Scene(listToRoomRent, 800, 600);
+        Scene listScene = new Scene(listToRoomRent, 600, 400);
         Main.rootStage.setTitle("RoomRent List");
         Main.rootStage.setScene(listScene);
     }
@@ -49,9 +48,10 @@ public class CheckOutController implements Initializable {
             Optional<ButtonType> option = alert.showAndWait();
             if (option.get()==ButtonType.OK){
                 RoomRentRepository rr = new RoomRentRepository();
+
                 ArrayList ls = new ArrayList<>();
                 ls.addAll(rr.all());
-                if (rr.checkin(checkout)){
+                if (rr.checkout(checkout)) {
                     bttBack(null);
                 }
             }
