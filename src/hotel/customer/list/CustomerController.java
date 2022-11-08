@@ -2,6 +2,7 @@ package hotel.customer.list;
 
 import hotel.Main;
 import hotel.dao.impls.CustomerRepository;
+import hotel.dao.impls.RoomRentRepository;
 import hotel.entities.Customer;
 import hotel.entities.RoomRent;
 import hotel.enums.RepoType;
@@ -37,8 +38,7 @@ public class CustomerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     tdName.setCellValueFactory(new PropertyValueFactory<Customer, String>("name"));
     tdCMT.setCellValueFactory(new PropertyValueFactory<Customer, String>("cmt"));
-    tdDatein.setCellValueFactory(new PropertyValueFactory< RoomRent, Date>("dateIn"));
-    tdDateout.setCellValueFactory(new PropertyValueFactory< RoomRent, Date>("dateOut"));
+
 
     tdEdit.setCellValueFactory(new PropertyValueFactory<Customer, Button>("edit"));
         ObservableList <Customer> ls = FXCollections.observableArrayList();
@@ -46,6 +46,7 @@ public class CustomerController implements Initializable {
         ls.addAll(rp.all());
         tbCustomers.setItems(ls);
     }
+
 
     public void backHome(ActionEvent actionEvent) throws Exception {
         Parent listPage = FXMLLoader.load(getClass().getResource("/hotel/home.fxml"));
