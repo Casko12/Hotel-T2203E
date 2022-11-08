@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.customer.list.CustomerController">
+   <children>
+      <TableView fx:id="tbCustomers" layoutX="12.0" layoutY="140.0" prefHeight="200.0" prefWidth="577.0">
+        <columns>
+          <TableColumn fx:id="tdName" prefWidth="204.0" text="Name" />
+          <TableColumn fx:id="tdCMT" prefWidth="127.0" text="National ID/ Passport" />
+            <TableColumn fx:id="tdEdit1" prefWidth="94.0" text="Date In" />
+            <TableColumn fx:id="tdEdit11" prefWidth="79.0" text="Date Out" />
+            <TableColumn fx:id="tdEdit" prefWidth="73.0" text="Edit" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="89.0" mnemonicParsing="false" onAction="#backHome" text="&lt;&lt; Back Home" />
+      <Button layoutX="510.0" layoutY="89.0" mnemonicParsing="false" onAction="#onToAdd" prefHeight="25.0" prefWidth="76.0" text="Add" />
+      <Text fill="#ee4343" layoutX="258.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button onAction="#gotoRoomRent" layoutX="253.0" layoutY="89.0" mnemonicParsing="false" text="Room Rent &gt;&gt;" />
+   </children>
+</Pane>
