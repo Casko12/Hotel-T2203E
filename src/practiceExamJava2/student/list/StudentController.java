@@ -1,11 +1,15 @@
-package practiceExamJava2.student;
+package practiceExamJava2.student.list;
 
+import hotel.Main;
 import hotel.dao.impls.RoomRepository;
 import hotel.entities.Room;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -32,11 +36,15 @@ public class StudentController implements Initializable {
     phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         ObservableList<Student> ls = FXCollections.observableArrayList();
         StudentRepository r = (StudentRepository)RepositoryFactory.creStudentRepository(RepoType.STUDENT);
-        ls.add(r.all())
+        ls.add(r.all());
     studentview.setItems(ls);
     }
 
-    public void add(ActionEvent actionEvent) {
+    public void add(ActionEvent actionEvent) throws Exception{
+        Parent listPage = FXMLLoader.load(getClass().getResource("../add/add.fxml"));
+        Scene listScene = new Scene(listPage, 600, 400);
+        Main.rootStage.setTitle("Add Student");
+        Main.rootStage.setScene(listScene);
     }
 
     public void exit(ActionEvent actionEvent) {
