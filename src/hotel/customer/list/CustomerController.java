@@ -38,8 +38,6 @@ public class CustomerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     tdName.setCellValueFactory(new PropertyValueFactory<Customer, String>("name"));
     tdCMT.setCellValueFactory(new PropertyValueFactory<Customer, String>("cmt"));
-
-
     tdEdit.setCellValueFactory(new PropertyValueFactory<Customer, Button>("edit"));
         ObservableList <Customer> ls = FXCollections.observableArrayList();
         CustomerRepository rp = (CustomerRepository)RepositoryFactory.creHotelRepository(RepoType.CUSTOMER);
